@@ -1,0 +1,41 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"aux1" [label="aux1"];
+"aux2" [label="aux2"];
+"actuador" [label="actuador"];
+"brazo1" [label="brazo1"];
+"barra1_a" [label="barra1_a"];
+"barra1_b" [label="barra1_b"];
+"brazo2" [label="brazo2"];
+"barra2_a" [label="barra2_a"];
+"barra2_b" [label="barra2_b"];
+"brazo3" [label="brazo3"];
+"barra3_a" [label="barra3_a"];
+"barra3_b" [label="barra3_b"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "act_x" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"act_x" -> "aux1"
+"aux1" -> "act_y" [label="xyz: 0 0 0 \nrpy: 0 -0 1.57075"]
+"act_y" -> "aux2"
+"aux2" -> "act_z" [label="xyz: 0 0 0 \nrpy: 0 -1.5708 0"]
+"act_z" -> "actuador"
+"base_link" -> "base_brazo1" [label="xyz: -0.181865 0.105 0 \nrpy: 0 -0 2.61799"]
+"base_brazo1" -> "brazo1"
+"brazo1" -> "codo1_a" [label="xyz: 0.62 0 0 \nrpy: 0 -0 0"]
+"codo1_a" -> "barra1_a"
+"barra1_a" -> "codo1_b" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"codo1_b" -> "barra1_b"
+"base_link" -> "base_brazo2" [label="xyz: 0 -0.21 0 \nrpy: 0 0 -1.57075"]
+"base_brazo2" -> "brazo2"
+"brazo2" -> "codo2_a" [label="xyz: 0.62 0 0 \nrpy: 0 -0 0"]
+"codo2_a" -> "barra2_a"
+"barra2_a" -> "codo2_b" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"codo2_b" -> "barra2_b"
+"base_link" -> "base_brazo3" [label="xyz: 0.181865 0.105 0 \nrpy: 0 -0 0.523599"]
+"base_brazo3" -> "brazo3"
+"brazo3" -> "codo3_a" [label="xyz: 0.62 0 0 \nrpy: 0 -0 0"]
+"codo3_a" -> "barra3_a"
+"barra3_a" -> "codo3_b" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"codo3_b" -> "barra3_b"
+}

@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+
+<robot name="Delta_robot">
+
+<!--BASE SUPERIOR:____________________-->
+	<link name="base_link">
+		<visual>
+			<geometry>
+				<cylinder length="0.005" radius="0.210"/>  <!--f/2-->
+			</geometry>
+			<material name="gris">
+				<color rgba="0.55 0.55 0.55 0.5"/>
+			</material>
+		</visual>
+	</link>
+
+<!--BRAZOS SUPERIORES:____________________-->
+	<!--BRAZO_1-->
+	<link name="brazo1">
+		<visual>
+			<origin xyz="0.310 0 0" rpy="0 0 0"/> <!--la = 150-->
+			<geometry>
+				<box size="0.620 0.003 0.003"/> <!--la = 150-->
+			</geometry>
+			<material name="blanco">
+				<color rgba="0.9 0.9 0.9 1"/>
+			</material>
+		</visual>
+	</link>
+
+	<joint name="base_brazo1" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="100.0" lower="0.0" upper="1.8" velocity="0.5"/>
+		<parent link="base_link"/>
+		<child link="brazo1"/>
+		<origin xyz="-0.181865335 0.105 0" rpy="0 0 2.61799"/> 
+	</joint>
+
+	<!--BRAZO_2-->
+	<link name="brazo2">
+		<visual>
+			<origin xyz="0.310 0 0" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.620 0.003 0.003"/> <!--la = 150-->
+			</geometry>
+			<material name="blanco"/>
+		</visual>
+	</link>
+
+	<joint name="base_brazo2" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="100.0" lower="0.0" upper="1.8" velocity="0.5"/>
+		<parent link="base_link"/>
+		<child link="brazo2"/>
+		<origin xyz="0 -0.210 0" rpy="0 0 -1.57075"/> 
+	</joint>
+
+	<!--BRAZO_3-->
+	<link name="brazo3">
+		<visual>
+			<origin xyz="0.310 0 0" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.620 0.003 0.003"/> <!--la = 150-->
+			</geometry>
+			<material name="blanco"/>
+		</visual>
+	</link>
+	<joint name="base_brazo3" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="100.0" lower="0.0" upper="1.8" velocity="0.5"/>
+		<parent link="base_link"/>
+		<child link="brazo3"/>
+		<origin xyz="0.181865335 0.105 0" rpy="0 0 0.523599"/> 
+	</joint>
+
+<!--BRAZOS INFERIORES:____________________-->	
+	
+	<!--Ante_BRAZO_1-->
+	<link name="barra1_a"/>
+	<joint name="codo1_a" type="revolute">
+		<axis xyz="0 -1 0"/>
+		<limit effort="100.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+		<parent link="brazo1"/>
+		<child link="barra1_a"/>
+		<origin xyz="0.620 0 0" rpy="0 0 0"/>
+	</joint>
+
+	<link name="barra1_b">
+		<visual>
+			<origin xyz="-0.440 0 0" rpy="0 0 0"/> <!--0.175-->
+			<geometry>
+				<box size="0.880 0.003 0.003"/> <!--lb = 205-->
+			</geometry>
+			<material name="blanco"/>
+		</visual>
+	</link>
+
+	<joint name="codo1_b" type="revolute">
+		<axis xyz="0 0 1"/>
+		<limit effort="100.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+		<parent link="barra1_a"/>
+		<child link="barra1_b"/>
+		<origin xyz="0 0 0" rpy="0 0 0"/> 
+	</joint>
+
+	<!--Ante_BRAZO_2-->
+
+	<link name="barra2_a"/>
+	<joint name="codo2_a" type="revolute">
+		<axis xyz="0 -1 0"/>
+		<limit effort="100.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+		<parent link="brazo2"/>
+		<child link="barra2_a"/>
+		<origin xyz="0.620 0 0" rpy="0 0 0"/> <!--la = 150-->
+	</joint>
+
+	<link name="barra2_b">
+		<visual>
+			<origin xyz="-0.440 0 0" rpy="0 0 0"/> <!--lb = 205  / 2 -->
+			<geometry>
+				<box size="0.880 0.003 0.003"/> <!--lb = 205-->
+			</geometry>
+			<material name="blanco"/>
+		</visual>
+	</link>
+
+	<joint name="codo2_b" type="revolute">
+		<axis xyz="0 0 1"/>
+		<limit effort="100.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+		<parent link="barra2_a"/>
+		<child link="barra2_b"/>
+		<origin xyz="0 0 0" rpy="0 0 0"/> <!--O2 = 62.0652 -107.5000 0-->
+	</joint>
+
+	<!--Ante_BRAZO_3-->
+	<link name="barra3_a"/>
+	<joint name="codo3_a" type="revolute">
+		<axis xyz="0 -1 0"/>
+		<limit effort="100.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+		<parent link="brazo3"/>
+		<child link="barra3_a"/>
+		<origin xyz="0.620 0 0" rpy="0 0 0"/> <!--O2 = 62.0652 -107.5000 0-->
+	</joint>
+
+	<link name="barra3_b">
+		<visual>
+			<origin xyz="-0.440 0 0" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.880 0.003 0.003"/> <!--lb = 205-->
+			</geometry>
+			<material name="blanco"/>
+		</visual>
+	</link>
+
+	<joint name="codo3_b" type="revolute">
+		<axis xyz="0 0 1"/>
+		<limit effort="100.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+		<parent link="barra3_a"/>
+		<child link="barra3_b"/>
+		<origin xyz="0 0 0" rpy="0 0 0"/> <!--O2 = 62.0652 -107.5000 0-->
+	</joint>
+
+<!--ACTUADOR:____________________-->
+
+	<link name="actuador">
+		<visual>
+			<origin xyz="0 0 0" rpy="0 -1.57075 0"/>
+			<geometry>
+				<cylinder length="0.001" radius="0.050"/>
+			</geometry>
+			<material name="colorte">
+				<color rgba="0.15 0.55 0.95 0.3"/>
+			</material>
+		</visual>
+	</link>
+
+	<link name="aux1"/>
+	<link name="aux2"/>
+
+
+	<joint name="act_x" type="prismatic">
+		<parent link="base_link"/>
+		<child link="aux1"/>
+		<limit effort="100.0" lower="-1" upper="1" velocity="0.5"/>
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+	</joint>
+
+	<joint name="act_y" type="prismatic">
+		<parent link="aux1"/>
+		<child link="aux2"/>
+		<limit effort="100.0" lower="-1" upper="1" velocity="0.5"/>
+		<origin rpy="0 0 1.57075" xyz="0 0 0"/>
+	</joint>
+
+	<joint name="act_z" type="prismatic">
+		<parent link="aux2"/>
+		<child link="actuador"/>
+		<limit effort="100.0" lower="0" upper="1" velocity="0.5"/>
+		<origin rpy="0 -1.57075 0" xyz="0 0 0"/>
+	</joint>
+</robot>
+
+
+
+

@@ -1,0 +1,64 @@
+*********************************
+*********** Pycharm *************
+*********************************
+cd Escritorio/
+cd pycharm-community-2020.3/bin/
+./pycharm.sh
+
+******************************************************
+******** Transformar archivo .yp a ejectuable ********
+******************************************************
+
+chmod +x nombre_py_ejecutable.py
+
+path_tm1_v2_adams.py
+workspace_v2.py
+posicionador_rviz_realtime_tm1_adams.py
+
+**********************************************
+*********** Calcular torque trayectorias *****
+**********************************************
+-------- [shell TODOS]: --------------------------------
+cd r_delta
+source devel/setup.bash
+-------- [shell 1]: ------------------------------------
+roscore
+-------- [shell 2]: ------------------------------------
+roslaunch simu_visual rviz_tm1_adams.launch
+-------- [shell 3]: --------------
+rosrun simu_visual posicionador_rviz_realtime_tm1_adams.py
+-------- [shell 4]: ------------------------------------
+rosrun rqt_graph rqt_graph
+-------- [shell 5]: ------------------------------------
+rosrun simu_visual path_tm1_v2_adams.py
+------------------------------------------------------
+-------- [shell 6] (trayectoria 1): --------------
+rostopic pub -1 /input_ls_final simu_visual/linear_speed_xyz "{xo: -300.0, yo: 0.0, zo: -450.0, xf: 300.0, yf: 150.0, zf: -750.0, vmax: 2000.0, amax: 40000.0, paso1: 50,  paso2: 150, ls_fin: true, idcall: 1, num_tray: 1}"
+-------- [shell 6] (trayectoria 2): --------------
+rostopic pub -1 /input_ls_final simu_visual/linear_speed_xyz "{xo: -300.0, yo: -150.0, zo: -450.0, xf: 300.0, yf: 150.0, zf: -750.0, vmax: 2000.0, amax: 40000.0, paso1: 50,  paso2: 150, ls_fin: true, idcall: 1, num_tray: 2}"
+-------- [shell 6] (trayectoria 3): --------------
+rostopic pub -1 /input_ls_final simu_visual/linear_speed_xyz "{xo: 300.0, yo: -150.0, zo: -450.0, xf: -300.0, yf: 150.0, zf: -750.0, vmax: 2000.0, amax: 40000.0, paso1: 50,  paso2: 150, ls_fin: true, idcall: 1, num_tray: 3}"
+-------- [shell 6] (trayectoria 4): --------------
+rostopic pub -1 /input_ls_final simu_visual/linear_speed_xyz "{xo: 400.0, yo: 150.0, zo: -450.0, xf: -400.0, yf: 150.0, zf: -450.0, vmax: 2000.0, amax: 40000.0, paso1: 50,  paso2: 150, ls_fin: true, idcall: 1, num_tray: 4}"
+-------- [shell 6] (trayectoria 5): --------------
+rostopic pub -1 /input_ls_final simu_visual/linear_speed_xyz "{xo: -300.0, yo: 0.0, zo: -450.0, xf: 300.0, yf: 150.0, zf: -750.0, vmax: 200.0, amax: 10000.0, paso1: 50,  paso2: 150, ls_fin: true, idcall: 1, num_tray: 5}"
+-------- [shell 6] (trayectoria 6): --------------
+rostopic pub -1 /input_ls_final simu_visual/linear_speed_xyz "{xo: -300.0, yo: -150.0, zo: -450.0, xf: 300.0, yf: 150.0, zf: -750.0, vmax: 200.0, amax: 10000.0, paso1: 50,  paso2: 150, ls_fin: true, idcall: 1, num_tray: 6}"
+-------- [shell 6] (trayectoria 7): --------------
+rostopic pub -1 /input_ls_final simu_visual/linear_speed_xyz "{xo: 300.0, yo: -150.0, zo: -450.0, xf: -300.0, yf: 150.0, zf: -750.0, vmax: 200.0, amax: 10000.0, paso1: 50,  paso2: 150, ls_fin: true, idcall: 1, num_tray: 7}"
+-------- [shell 6] (trayectoria 8): --------------
+rostopic pub -1 /input_ls_final simu_visual/linear_speed_xyz "{xo: 400.0, yo: 150.0, zo: -450.0, xf: -400.0, yf: 150.0, zf: -450.0, vmax: 200.0, amax: 10000.0, paso1: 50,  paso2: 150, ls_fin: true, idcall: 1, num_tray: 8}"
+
+******************************************
+*********** Espacio de Trabajo ***********
+******************************************
+-------- [shell TODOS]: --------------------------------
+cd r_delta
+source devel/setup.bash
+-------- [shell 1]: ------------------------------------
+rosrun simu_visual workspace_v2.py
+-------- [shell 2]: ------------------------------------
+rostopic pub -1 /input_workspace simu_visual/parameter_ws "graficar_realtime: true
+step: 10
+idcall: 1"
+

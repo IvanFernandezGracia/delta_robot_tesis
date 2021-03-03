@@ -1,0 +1,13 @@
+<launch>
+   <!-- comentarios -->
+        <arg name="model" />
+	<arg name="gui" default="true" />
+
+	<param name="robot_description" textfile="$(find simu_visual)/urdf/robot_urdftm1_adams.urdf" />
+	<param name="use_gui" value="$(arg gui)"/>
+   
+	<node name="estados_robot_pub" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+	<node name="rviz" pkg="rviz" type="rviz" args="−d $(find simu_visual)/rviz/tfm_simulacion.rviz" required="true" />
+
+</launch>

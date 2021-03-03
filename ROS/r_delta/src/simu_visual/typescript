@@ -1,0 +1,108 @@
+Script iniciado en 2021-02-22 23:16:10-0300
+]0;ivan@ivan-HP-240-G6-Notebook-PC: ~/r_delta/src/simu_visual[01;32mivan@ivan-HP-240-G6-Notebook-PC[00m:[01;34m~/r_delta/src/simu_visual[00m$ cd[K[Kls
+[0m[01;34m'26 enero cagazo -çV'[0m   [01;34mconfig[0m   [01;34minclude[0m   [01;34mmsg[0m           [01;34mrviz[0m     [01;34msrc[0m          [01;34murdf[0m
+ CMakeLists.txt         [01;34mFotos[0m    [01;34mlaunch[0m    package.xml   [01;34mscript[0m   typescript   [01;34mworld[0m
+]0;ivan@ivan-HP-240-G6-Notebook-PC: ~/r_delta/src/simu_visual[01;32mivan@ivan-HP-240-G6-Notebook-PC[00m:[01;34m~/r_delta/src/simu_visual[00m$ cd script/
+]0;ivan@ivan-HP-240-G6-Notebook-PC: ~/r_delta/src/simu_visual/script[01;32mivan@ivan-HP-240-G6-Notebook-PC[00m:[01;34m~/r_delta/src/simu_visual/script[00m$ ñs[K[Kls
+'0000 LEER!!'                         linear_speed_f.pyc
+ [0m[01;34mADAMS[0m                                [01;32mnodo_dp1.py[0m
+ [01;31mADAMS.zip[0m                            [01;32mpath_5grado.py[0m
+ [01;32mcodos.py[0m                             path_5grado.pyc
+ codos.pyc                            [01;32mpath_caresian_angular.py[0m
+ [01;32mcodos_tm1.py[0m                         [01;32mpath_linear_step.py[0m
+ codos_tm1.pyc                        path_linear_step.pyc
+ Curva.xlsx                           [01;32mpath_test_jacobian.py[0m
+ [01;32mdelta_kinematics_Paderborn_dp1.py[0m    [01;32mpath_tm1.py[0m
+ delta_kinematics_Paderborn_dp1.pyc   [01;32mpath_tm1_v2.py[0m
+ [01;32mdelta_kinematics_Paderborn.py[0m        [01;32mpd.py[0m
+ delta_kinematics_Paderborn.pyc       pd.pyc
+ [01;32mdelta_kinematics_Paderborn_tm1.py[0m    [01;32mpd_tm1.py[0m
+ delta_kinematics_Paderborn_tm1.pyc   pd_tm1.pyc
+ [01;32mdelta_kinematics.py[0m                  [01;32mplot_delta.py[0m
+ delta_kinematics.pyc                 plot_delta.pyc
+ [01;32mdelta_kinematics_t1m.py[0m              [01;32mposicionador_rviz.py[0m
+ delta_kinematics_t1m.pyc             [01;32mposicionador_rviz_realtime.py[0m
+ discretizacion_velocidad.py          [01;32mposicionador_rviz_realtime_tm1.py[0m
+ discretizacion_velocidad.pyc         [01;32mposicionador_rviz_tm1.py[0m
+ [01;32mFormato.py[0m                           [01;32mtorque_dp1_limits.py[0m
+ [01;32mjacobian_Paderborn_pd1.py[0m            torque_dp1_limits.pyc
+ jacobian_Paderborn_pd1.pyc           [01;32mtorque_dp1_Paderborn.py[0m
+ [01;32mjacobian_Paderborn.py[0m                torque_dp1_Paderborn.pyc
+ jacobian_Paderborn.pyc               [01;32mtorque_m1_Paderborn.py[0m
+ [01;32mjacobian_Paderborn_tm1.py[0m            torque_m1_Paderborn.pyc
+ jacobian_Paderborn_tm1.pyc           [01;32mtorque_m1_Paderborn_v2.py[0m
+ [01;32mjacobian_Paderborn_tm1_v2.py[0m         torque_m1_Paderborn_v2.pyc
+ jacobian_Paderborn_tm1_v2.pyc        [01;32mtorque_m1.py[0m
+ [01;32mjacobian.py[0m                          torque_m1.pyc
+ jacobian.pyc                         [01;32mtrans_rot_ls.py[0m
+ [01;32mjacobian_tm1.py[0m                      trans_rot_ls.pyc
+ jacobian_tm1.pyc                     [01;32mworkspace.py[0m
+ [01;32mlinear_speed_f.py[0m                    workspace.txt
+]0;ivan@ivan-HP-240-G6-Notebook-PC: ~/r_delta/src/simu_visual/script[01;32mivan@ivan-HP-240-G6-Notebook-PC[00m:[01;34m~/r_delta/src/simu_visual/script[00m$ A[KaAA[K[K[KLS
+
+No se ha encontrado la orden «LS», pero se puede instalar con:
+
+sudo apt install sl
+
+]0;ivan@ivan-HP-240-G6-Notebook-PC: ~/r_delta/src/simu_visual/script[01;32mivan@ivan-HP-240-G6-Notebook-PC[00m:[01;34m~/r_delta/src/simu_visual/script[00m$ LS[K[Kls
+'0000 LEER!!'                         linear_speed_f.pyc
+ [0m[01;34mADAMS[0m                                [01;32mnodo_dp1.py[0m
+ [01;31mADAMS.zip[0m                            [01;32mpath_5grado.py[0m
+ [01;32mcodos.py[0m                             path_5grado.pyc
+ codos.pyc                            [01;32mpath_caresian_angular.py[0m
+ [01;32mcodos_tm1.py[0m                         [01;32mpath_linear_step.py[0m
+ codos_tm1.pyc                        path_linear_step.pyc
+ Curva.xlsx                           [01;32mpath_test_jacobian.py[0m
+ [01;32mdelta_kinematics_Paderborn_dp1.py[0m    [01;32mpath_tm1.py[0m
+ delta_kinematics_Paderborn_dp1.pyc   [01;32mpath_tm1_v2.py[0m
+ [01;32mdelta_kinematics_Paderborn.py[0m        [01;32mpd.py[0m
+ delta_kinematics_Paderborn.pyc       pd.pyc
+ [01;32mdelta_kinematics_Paderborn_tm1.py[0m    [01;32mpd_tm1.py[0m
+ delta_kinematics_Paderborn_tm1.pyc   pd_tm1.pyc
+ [01;32mdelta_kinematics.py[0m                  [01;32mplot_delta.py[0m
+ delta_kinematics.pyc                 plot_delta.pyc
+ [01;32mdelta_kinematics_t1m.py[0m              [01;32mposicionador_rviz.py[0m
+ delta_kinematics_t1m.pyc             [01;32mposicionador_rviz_realtime.py[0m
+ discretizacion_velocidad.py          [01;32mposicionador_rviz_realtime_tm1.py[0m
+ discretizacion_velocidad.pyc         [01;32mposicionador_rviz_tm1.py[0m
+ [01;32mFormato.py[0m                           [01;32mtorque_dp1_limits.py[0m
+ [01;32mjacobian_Paderborn_pd1.py[0m            torque_dp1_limits.pyc
+ jacobian_Paderborn_pd1.pyc           [01;32mtorque_dp1_Paderborn.py[0m
+ [01;32mjacobian_Paderborn.py[0m                torque_dp1_Paderborn.pyc
+ jacobian_Paderborn.pyc               [01;32mtorque_m1_Paderborn.py[0m
+ [01;32mjacobian_Paderborn_tm1.py[0m            torque_m1_Paderborn.pyc
+ jacobian_Paderborn_tm1.pyc           [01;32mtorque_m1_Paderborn_v2.py[0m
+ [01;32mjacobian_Paderborn_tm1_v2.py[0m         torque_m1_Paderborn_v2.pyc
+ jacobian_Paderborn_tm1_v2.pyc        [01;32mtorque_m1.py[0m
+ [01;32mjacobian.py[0m                          torque_m1.pyc
+ jacobian.pyc                         [01;32mtrans_rot_ls.py[0m
+ [01;32mjacobian_tm1.py[0m                      trans_rot_ls.pyc
+ jacobian_tm1.pyc                     [01;32mworkspace.py[0m
+ [01;32mlinear_speed_f.py[0m                    workspace.txt
+]0;ivan@ivan-HP-240-G6-Notebook-PC: ~/r_delta/src/simu_visual/script[01;32mivan@ivan-HP-240-G6-Notebook-PC[00m:[01;34m~/r_delta/src/simu_visual/script[00m$ cd aD[Ksd[Kd[K[Kd[K[KADAMS/
+]0;ivan@ivan-HP-240-G6-Notebook-PC: ~/r_delta/src/simu_visual/script/ADAMS[01;32mivan@ivan-HP-240-G6-Notebook-PC[00m:[01;34m~/r_delta/src/simu_visual/script/ADAMS[00m$ LS
+
+No se ha encontrado la orden «LS», pero se puede instalar con:
+
+sudo apt install sl
+
+]0;ivan@ivan-HP-240-G6-Notebook-PC: ~/r_delta/src/simu_visual/script/ADAMS[01;32mivan@ivan-HP-240-G6-Notebook-PC[00m:[01;34m~/r_delta/src/simu_visual/script/ADAMS[00m$ LS[K[Kls
+ adams_0.txt                               jacobian_tm1_adams.py
+ adams_1.txt                               linear_speed_f_adams.py
+ adams_2.txt                               [0m[01;35mlista.png[0m
+ adams_3.txt                               path_tm1_v2_adams.py
+ adams_4.txt                               pd_tm1_adams.py
+ adams_5.txt                               plot_delta.py
+ adams_6.txt                               posicionador_rviz_realtime_tm1_adams.py
+ adams_7.txt                              'TESIS (15).pdf'
+ cdm.txt                                   torque_m1_adams.py
+ codos_tm1_adams.py                        torque_m1_Paderborn_v2_adams.py
+ delta_kinematics_Paderborn_tm1_adams.py   trans_rot_ls_adams.py
+ delta_kinematics_t1m_adams.py             [01;34mvenv[0m
+ jacobian_Paderborn_tm1_v2_adams.py        workspace_v2.py
+]0;ivan@ivan-HP-240-G6-Notebook-PC: ~/r_delta/src/simu_visual/script/ADAMS[01;32mivan@ivan-HP-240-G6-Notebook-PC[00m:[01;34m~/r_delta/src/simu_visual/script/ADAMS[00m$ rosrun simu[K[K[K[K[K[K[K[K[K[K[Krso[K[Kosrun 
+adams_0.txt                              jacobian_tm1_adams.py
+adams_1.txt                              linear_speed_f_adams.py
+adams_2.txt                              lista.png
+adams_3.txt                              path_tm1_v2_adams.py
+adams_4.txt                

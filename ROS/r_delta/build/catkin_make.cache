@@ -1,0 +1,2 @@
+arduino:file_ros:motores:simu_visual
+-DCATKIN_DEVEL_PREFIX=/home/ivan/r_delta/devel -DCMAKE_INSTALL_PREFIX=/home/ivan/r_delta/install -G Unix Makefiles

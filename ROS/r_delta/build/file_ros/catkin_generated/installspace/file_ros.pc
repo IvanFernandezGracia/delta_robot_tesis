@@ -1,0 +1,8 @@
+prefix=/home/ivan/r_delta/install
+
+Name: file_ros
+Description: Description of file_ros
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

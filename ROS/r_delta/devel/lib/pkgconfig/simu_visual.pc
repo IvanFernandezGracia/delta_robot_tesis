@@ -1,0 +1,8 @@
+prefix=/home/ivan/r_delta/devel
+
+Name: simu_visual
+Description: Description of simu_visual
+Version: 0.0.0
+Cflags: -I/home/ivan/r_delta/devel/include -I/home/ivan/r_delta/src/simu_visual/include
+Libs: -L${prefix}/lib -lsimu_visual
+Requires: roscpp rospy std_msgs message_runtime

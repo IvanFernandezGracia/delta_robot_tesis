@@ -1,0 +1,8 @@
+prefix=/home/ivan/r_delta/install
+
+Name: motores
+Description: Description of motores
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

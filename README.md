@@ -7,6 +7,7 @@
     <li><a href="#Abstract">Abstract</a></li>
     <li><a href="#ROS">ROS</a></li>
     <li><a href="#Contact">Contact</a></li>
+    <li><a href="#ROS Visualization">ROS Visualization</a></li>
   </ol>
 </details>
 
@@ -18,6 +19,8 @@ Ivan Alejandro Fernandez Gracia
 Mechanical Engineering  
 Universidad de Santiago de Chile
 
+<!-- Rviz -->
+## ROS Visualization
 ![alt text](https://github.com/IvanFernandezGracia/delta_robot_tesis/blob/main/Readme%20File/rviz_2.png?raw=true)
 
 <!-- Resumen -->

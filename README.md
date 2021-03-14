@@ -21,8 +21,7 @@ The results show that the kinematic and dynamic modeling of the two methods give
 
 <!-- ROS -->
 ### ROS
-INSERTAR CARPETAS ROS IMAGEN ANEXO  
-
+![Screenshot](Readme File/catkin_make.png)
 
 <!-- CONTACT -->
 ## Contact

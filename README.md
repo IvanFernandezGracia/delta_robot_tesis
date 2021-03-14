@@ -1,12 +1,5 @@
 # Dynamics and Kinematics of a Delta Robot 3df whit ROS and ADAMS :robot:
 
-
-
-[![Abstract][Abstract-shield]][Abstract-url]
-[![ROS File][ROS-shield]][ROS-url]
-[![Contact][Contact-shield]][Contact-url]
-
-
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
@@ -36,8 +29,10 @@ This section should list any major frameworks that you built your project using.
 
 <!-- CONTACT -->
 ## Contact
+IVÁN ALEJANDRO FERNÁNDEZ GRACIA
+:email: ivan.fernandez.g@usach.cl
+:telephone_receiver: +56-961214718
+Mechanical Engineering
+Universidad de Santiago de Chile
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 

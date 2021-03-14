@@ -21,7 +21,7 @@ The results show that the kinematic and dynamic modeling of the two methods give
 
 <!-- ROS -->
 ### ROS
-![Screenshot](Readme File/catkin_make.png)
+![Alt text](Readme File/catkin_make.png?raw=true "Title")
 
 <!-- CONTACT -->
 ## Contact

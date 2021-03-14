@@ -1,4 +1,4 @@
-# Dynamics and Kinematics of a Delta Robot 3df whit ROS and ADAMS &#129302
+# Dynamics and Kinematics of a Delta Robot 3df whit ROS and ADAMS :robot:
  
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion

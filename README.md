@@ -29,10 +29,10 @@ This section should list any major frameworks that you built your project using.
 
 <!-- CONTACT -->
 ## Contact
-IVÁN ALEJANDRO FERNÁNDEZ GRACIA |linebreaksbr
-:email: ivan.fernandez.g@usach.cl
-:telephone_receiver: +56-961214718
-Mechanical Engineering
+IVÁN ALEJANDRO FERNÁNDEZ GRACIA   
+:email: ivan.fernandez.g@usach.cl  
+:telephone_receiver: +56-961214718  
+Mechanical Engineering  
 Universidad de Santiago de Chile
 
 

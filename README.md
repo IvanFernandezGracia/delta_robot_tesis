@@ -18,9 +18,7 @@ Ivan Alejandro Fernandez Gracia
 Mechanical Engineering  
 Universidad de Santiago de Chile
 
-<p align="center">
 ![alt text](https://github.com/IvanFernandezGracia/delta_robot_tesis/blob/main/Readme%20File/rviz_2.png?raw=true)
-</p>
 
 <!-- Resumen -->
 ## Abstract
@@ -32,9 +30,8 @@ The results show that the kinematic and dynamic modeling of the two methods give
 
 <!-- ROS -->
 ### ROS
-<p align="center">
+
 ![alt text](https://github.com/IvanFernandezGracia/delta_robot_tesis/blob/main/Readme%20File/catkin_make.png?raw=true)
-</p>
 
 
 

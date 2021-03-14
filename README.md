@@ -21,7 +21,7 @@ The results show that the kinematic and dynamic modeling of the two methods give
 
 <!-- ROS -->
 ### ROS
-![alt text](https://github.com/IvanFernandezGracia/delta_robot_tesis/Readme File/catkin_make.jpg?raw=true)
+![alt text](https://github.com/IvanFernandezGracia/delta_robot_tesis/blob/main/Readme%20File/catkin_make.png?raw=true)
 
 <!-- CONTACT -->
 ## Contact

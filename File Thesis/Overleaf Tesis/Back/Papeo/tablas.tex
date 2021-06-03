@@ -1,0 +1,70 @@
+       %https://www.overleaf.com/learn/latex/tables
+       %https://www.overleaf.com/learn/latex/Line_breaks_and_blank_spaces_es
+       
+       
+        \begin{table}[h]
+            \centering
+            \begin{tabular}{c c}
+            \hline
+                \textbf{Numero}& \textbf{Descripción} \\ 
+            \hline             \hline
+             1 & Base fija \\
+            \hline
+             2 & Brazo \\
+            \hline
+             3 & Junta esférica \\
+            \hline
+             4 & Antebrazo\\
+            \hline
+             5 & Efector final \\
+             \hline
+             6 & Actuador  \\
+             \hline
+            \end{tabular}
+            \caption{Caption}
+            \label{tab:tabla}
+        \end{table}
+        \caption{Referencias del dibujo}
+
+
+        \begingroup
+            \renewcommand{\arraystretch}{1.5}
+            \begin{table}[H]
+            \centering
+            \begin{tabular}{c m{12cm}}
+               \hline
+               \textbf{Simbología}  & \multicolumn{1}{c|}{\textbf{Descripción}}  \\\hline\hline
+               $r_{f}$  & Longitud del brazo                                    \\\hline
+               $r_{e}$  & Longitud del antebrazo                                \\\hline               
+               $f$  & Lado de base fija                                         \\\hline
+               $e$  & Lado del efector                                          \\\hline
+               $\theta_{i}$  & Ángulo del actuador i    \\\hline
+               $F_{i}$  & Coordenadas de la posición del actuador i=1,2,3.    \\\hline
+               $E_{i}$  & Coordenadas de las juntas esféricas que unen el antebrazo con el efector (punto medio del lado
+               del triangulo que forma el efector) i=1,2,3.    \\\hline
+               $E_{0}(x_{0},y_{0},z_{0})$  & Coordenadas del centroide del efector   \\\hline               
+            \end{tabular}
+            \caption{Referencias del dibujo}
+        \end{table}
+        \endgroup
+        
+        
+ 
+        \begin{center}
+        \renewcommand{\arraystretch}{2.5}
+
+             \begin{tabular}{p{1.4cm} c c } 
+                 \hline
+                 \textbf{Centros}  &  \textbf{Centros esferas}  & \textbf{Radio} \\ [0.5ex] 
+                 \hline\hline
+                         $\left(x_1,y_1,z_1\right)$ &
+                         ${J^'}_1\left(0,\left[-\frac{f-e}{2\sqrt{3}}-r_f{\mathrm{cos} \left({\theta }_1\right)\ }\right],-r_f{\mathrm{sin}\mathrm{n} \left({\theta }_1\right)\ }\right)$ & 
+                                                 $r_e$ \\ 
+                \hline
+                          $\left(x_2,y_2,z_2\right)$ & ${J^'}_2(\left[\frac{f-e}{2\sqrt{3}}+r_f{\mathrm{cos} \left({\theta }_2\right)\ }\right]\mathrm{cos}\mathrm{}(30{}^\circ ),\left[\frac{f-e}{2\sqrt{3}}+r_f{\mathrm{cos} \left({\theta }_2\right)\ }\right]\mathrm{sin}\mathrm{}(30{}^\circ ),-r_f{\mathrm{sin} \left({\theta }_2\right)\ })$ & $r_e$ \\
+                \hline
+                           $\left(x_3,y_3,z_3\right)$ & ${J^'}_3(-\left[\frac{f-e}{2\sqrt{3}}+r_f{\mathrm{cos} \left({\theta }_3\right)\ }\right]\mathrm{cos}\mathrm{}(30{}^\circ ),\left[\frac{f-e}{2\sqrt{3}}+r_f{\mathrm{cos} \left({\theta }_3\right)\ }\right]\mathrm{sin}\mathrm{}(30{}^\circ ),-r_f{\mathrm{sin} \left({\theta }_3\right)\ })$ & $r_e$ \\ [1ex] 
+                 \hline
+            \end{tabular}
+            \caption{Referencias del dibujo}
+        \end{center}

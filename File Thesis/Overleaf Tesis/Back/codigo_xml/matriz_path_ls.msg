@@ -1,0 +1,9 @@
+bool permiso
+int64 id_call
+float32[] x
+float32[] y
+float32[] z
+float32[] th1
+float32[] th2
+float32[] th3
+float32[] tiempo

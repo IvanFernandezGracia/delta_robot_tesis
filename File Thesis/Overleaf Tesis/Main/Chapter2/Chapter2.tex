@@ -1,0 +1,352 @@
+\chapter{Estado del arte}\label{CAP2}
+
+
+\section{Introducción a la robótica}
+    La robótica es la ciencia y la tecnología que se ocupa del estudio y funcionamiento de los robots a través del diseño, manufactura y aplicación de estos. El objetivo de la robótica es diseñar un robot eficiente. Los robots están siendo cada vez más eficientes a causa de que los creadores e investigadores se enfocan en que estos puedan pensar y aprender por si solos, para ello implementan la inteligencia artificial. Un ejemplo de la IA es la robot humanoide Sophia, visualizada en la figura \eqref{f:Cap2_general_1}, capaz de interactuar con humanos .
+    
+    \begin{figure}[htb]
+        \centering
+        \includegraphics[width=0.3\linewidth]{Main/Chapter2/Images2/Robot-humanoideSophiaIA.png}
+        \caption{Robot humanoide Sophia, IA \cite{robot_sofi}} 
+        \label{f:Cap2_general_1}
+    \end{figure}   
+    
+    La palabra robot fue usada por primera vez en el año 1921 en la obra de teatro R.U.R (Rossums Universal Robots, figura \eqref{f:Cap2_general_2}) creada por el escritor checo Karel Capek (1890 - 1939). El origen etimológico de la palabra es robota, que significa en checo trabajo forzado o esclavo. Posteriormente se emplea la palabra ``robótica'' en obras de ciencia ficción tales como: Yo Robot (1950) y Robots e imperio (1985) creadas por el escritor y profesor de bioquímica Isaac Asimov (1920-1992).
+    
+    \newpage
+    
+    \begin{figure}[htb]
+        \centering
+        \includegraphics[width=0.6\linewidth]{Main/Chapter2/Images2/Obra-robots.jpg}
+        \caption{Obra R.U.R (Robots Universal Rossum) creada por Karel Capek \cite{cap2_rur}}
+        \label{f:Cap2_general_2}
+    \end{figure}
+    
+    Hoy en día los expertos en el área de la robótica y automatización no han llegado a un acuerdo para una definición universal de la palabra robot. Es por esta razón que a continuación se presenta la descripción de un robot respecto al punto de vista de tres instituciones importantes:
+    
+    \begin{itemize}
+    
+        \item \textbf{Robot Institute of America (RIA)}: ``Un robot es un manipulador reprogramable multifuncional diseñado para mover material, partes, herramientas o dispositivos especializados a través de movimientos programados variables para el desarrollo de una variedad de tareas.''
+        
+        \item \textbf{Japanese Industrial Robot Association (JIRA)}: ``Un robot de un dispositivo con grados de libertad que puede ser controlado.''
+        
+        \item \textbf{International Federation of Robotics (IFR)}: ``Un robot es un mecanismo actuado programable en dos o más ejes con un grado de autonomía, que se mueva en su entorno para realizar tareas previstas.
+        \textit{Nota 1: Un robot incluye el sistema de control y la interfase con el sistema de control.}\textit{Nota 2: La clasificación de robot industrial o robot de servicio se hace de acuerdo con la aplicación prevista.}''
+        
+    \end{itemize}
+    
+    A partir de las tres definiciones anteriores podemos concluir que un robot es un mecanismo programable o re-programable, capaz de interactuar con acciones independientes e inteligentes en un entorno especifico para realizar una variedad de tareas previstas.
+    
+    En este trabajo de título se estudia un robot de tipo delta. Esta compuesto por tres brazos conectados a una base fija y a otra móvil llamada efector. Al estar los tres brazos conectados a la misma base, la cinemática del robot es cerrada. Los brazos se accionan por medio de actuadores que generalmente son motores. En el efector final se encuentra generalmente herramientas para realizar tareas especificas.
+    
+    \newpage
+\section{Historia de la robótica}
+    
+    Los robots son una gran noticia hoy en día gracias a las enormes mejoras que han provisto en diversas áreas de la vida de las personas y han abierto un nuevo capítulo en la interacción de humanos y robots para el futuro. Estas enormes mejoras han sido paulatinas, ya que la robótica tiene sus origenes hace miles de años. A continuación, se presentan algunos de los hitos registrados a través de la historia, que han ayudado a la robótica a convertirse en lo que es hoy.
+    
+ \begin{longtable}[c]{c m{12cm}}
+     \label{tab:cap2_efemerides}\\
+
+     \endfirsthead
+    
+     \hline
+     \multicolumn{2}{|c|}{Continuación de la tabla \eqref{tab:cap2_efemerides}}\\
+     \hline
+     \endhead
+    
+     \hline
+     \endfoot
+    
+     \hline
+     \textbf{Año}  & \multicolumn{1}{c}{\textbf{Hito}}  \\\hline\hline
+     \textbf{400 A.C} & El matemático y filósofo italiano Arquitas de Tarento hizo una paloma de madera que volaba. \\ \hline
+     \textbf{10-70 D.C} & El matemático y científico griego Herón de Alejandría construyó diversos autómatas con forma de ave. Se le atribuye la invención de la primera máquina de vapor, conocida como “aeolipile” y la fuente de Herón. \\ \hline
+     \textbf{1452 - 1519} & Leonardo Da Vinci diseño 2 autómatas, el primero consiste en un mecanismo que emulaba el movimiento humano vestido de armadura y el segundo un león mecánico \\ \hline
+     \textbf{1947} & Primer manipulador eléctrico servo-controlado, por Goetz. \\ \hline
+     \textbf{1952} & Primera máquina de control numérico, que se programa por un lenguaje simbólico Software. \\ \hline
+     \textbf{1954} & El primer Robot: manipulador tipo brazo articulado que realizaba una secuencia de movimientos programables, desarrollado por George Devol. \\ \hline
+     \textbf{1959} & George Devol conoció a Joseph Engelberger y juntos fundaron en 1960 la empresa Unimation dedicada a la fabricación de robot \\ \hline
+     \textbf{1960} & Se produce el primer robot de configuración cilíndrica Versatran, por la compañía American Machine Foundry (AMF) \\ \hline
+     \textbf{1961} & Unimation instala el primer Unimate en General Motors en los procesos de fundición; mientras que la Ford Motor Company instala un robot Versatran. \\ \hline
+     \textbf{1963} & La compañía Fuji Yusoki Kogyo de Japón desarrolla el primer robot para aplicaciones de palletzing, llamado Palletizer. \\ \hline
+     \multirow{2}{*}{\textbf{1968}} & Kawasaki adquiere los derechos de fabricación del Unimate en Japón. Comienza la fabricación e implementación de robots en las industrias de Japón. \\ \cline{2-2}
+      & General Motors emplea baterías de robots en el proceso de fabricación de las carrocerías de los coches.\\ \hline
+     \textbf{1970} & KUKA, empresa alemana, instala la primera línea de soldadura equipada con robots industriales. \\ \hline
+     \textbf{1971} & Se funda la Japanese Industrial Robot Association (JIRA). \\ \hline
+     \multirow{2}{*}{\textbf{1973}} & ASEA, empresa sueca, comercializa el primer robot industrial completamente eléctrico, IRB6. \\ \cline{2-2}
+      & La empresa KUKA Robotics contruye el primer robot articulado electromecánicamente de 6 ejes nombrado FAMULUS.\\ \hline
+     \multirow{2}{*}{\textbf{1974}} & Se funda el Robot Institute of America (RIA), actualmente llamado Robotic Industries Association.  \\ \cline{2-2}
+             & Se introduce el primer robot industrial a España. \\ \cline{2-2}
+             & Comienza en lenguaje de programación AL del que derivan otros robots posteriormente. \\ \hline
+     \textbf{1978} & Unimation, con el desarrollo de Victor Scheinman, introduce el robot PUMA (Programmable Universal Machine for Assembly) con el lenguaje de programacion VAL (Victor’s Assembly Languaje). \\ \hline
+     \textbf{1979} & A partir del desarrollo del profesor Hiroshi Makino de la Universidad de Yamanashi de Japón se produce el primer robot SCARA (Selective Compliance Assembly Robot Arm) a manos de Sankyo e IBM. \\ \hline
+     \textbf{1980} & Fundación de la Federación Internacional de Robótica (IFR). \\ \hline
+     \textbf{1981} & La compañía americana PaR Systems introduce el primer robot Gantry o de plataforma industrial. \\ \hline
+     \multirow{2}{*}{\textbf{1984}} & Adept introduce el primer robot SCARA de accionamiento directo llamado AdeptOne. \\ \cline{2-2}
+      &  ABB, empresa sueca formada a partir de ASEA, produce el IRB 1000, el robot ensamblador más rápido hasta la fecha. \\ \hline
+     \textbf{1987} & Se constituye la Federación Internacional de Robótica con sede en Estocolmo. \\ \hline
+     \textbf{1992} & Aparece el robot DELTA, diseñado por el científico suizo Reymond Clavel en su tesis de doctorado. \\ \hline
+     \textbf{1994} & Motoman presenta el primer sistema de control de robots (MRC) que proporcionó el control sincronizado de dos robots hasta 21 ejes. \\ \hline
+     \textbf{1998} & ABB, basándose en la estructura del robot Delta, desarrolla el Flex-Picker, considerador el robot de selección más rápido del mundo. \\ \hline
+     \textbf{1999} & La compañía alemana Reis Robotics, integra una guía de rayo láser integrada dentro de sus brazos robóticos. \\ \hline
+     \textbf{2004} & Motoman introduce un sistema de control robótico mejorado (NX100), que provee control sincronizado de cuatro robots hasta 38 ejes. \\ \hline
+     \multirow{2}{*}{\textbf{2006}} & La compañía de automatización Comau de Italia presenta el primer Teach Pendant Inalámbrico (WiTP). \\ \cline{2-2}
+        & KUKA presenta el primer robot de peso ligero (LWR) conformado por una estructura de aluminio. \\ \hline
+     \textbf{2007} & Motoman lanza robots super rápidos de soldadura por arco, que reduce los tiempos de ciclo en un 15\% 
+     \\ \hline
+     \textbf{2009} &  ABB lanza el robot industrial multipropósito más pequeño, IRB120, que pesa solo 25kg y un alcance de 580mm. \\ \hline
+     \textbf{2013} & KUKA presenta un robot diseñado para una colaboración segura humano-robot del área de trabaja llamado LBR iiwa “Leichtbauroboter intelligent industrial work assistant”, que cuenta con 7 ejes. \\ \hline
+    \caption{Evolución de la robótica industrial}
+ \end{longtable}
+ 
+    El robot delta fue investigado e inventando en 1985 por el profesor Reymond Clavel (figura \eqref{f:Cap2_general_4}) y su equipo en el laboratorio de sistemas de robótica de la la École Polytechnique Fédérale de Lausanne (EPFL, Suiza). Ellos comenzaron la investigación del robot delta después de una visita a una fabrica de chocolate. El equipo de Clavel estaba buscando aplicaciones de mano de obra repetitivas para robots, y descubrieron que el empaque de bombones de chocolate era un candidato para este tipo de automatización de alta velocidad y baja carga útil. En ese mismo año se completo el prototipo de robot delta, el cual fue patentado. En 1987 la compañía suiza Demareux Robotics and Microtechnology compró una licencia del robot delta y comenzó la producción estos para la industria de empaquetamiento. En 1991 el Dr. Reymond Clavel presentó su tesis doctoral 'Conception d'un robot parallèle rapide à 4 degrés de liberté' y recibió el premio Golden Robot, Award patrocinado por ABB Flexible Automation, por su trabajo innovador y desarrollo del robot delta.
+
+
+    \begin{figure}[htb]
+        \centering
+        \includegraphics[width=0.36\linewidth]{Main/Chapter2/Images2/Reymond-Clavel-Robot-Delta.png}
+        \caption{Reymond Clavel y el robot delta \cite{cap2_rey}}
+        \label{f:Cap2_general_4}
+    \end{figure}
+    
+    
+\newpage    
+    
+\section{Clasificaciones de robots}
+    
+    \subsection{Clasificación por generación}
+        \subsubsection{Primera generación}
+            Robots manipuladores. Se caracterizan por programas de control fijos, relativamente sencillos de lazo abierto (sin retroalimentación). Son capaces de repetir operaciones previamente programadas en ellos, no pueden adaptarse al entorno, por lo que no deben existir perturbaciones externas. Por lo tanto, estos robots son los más adecuados en entornos industriales que realizan operaciones repetitivas.
+        
+        \subsubsection{Segunda generación}
+            Robots de aprendizaje. Son adaptativos, pueden operar en entornos variables o parcialmente desconocidos. Estos robots ejecutan una serie de operaciones predefinidas, pero también pueden tener en cuenta los cambios en el entorno y modificar su rutina para realizar sus tareas. Imitan la secuencia de movimientos que ha sido ejecutada previamente por un operador humano. El operador realiza los movimientos requeridos mientras el robot le sigue y los memoriza con ayuda de sensores que recopilan datos.
+        \subsubsection{Tercera generación}
+            Robots con control sensorizado. Los robots cuentan con controladores (computadoras) que, usando los datos o la información recopilada de sus sensores, obtienen la habilidad de ejecutar las ordenes de un programa escrito en alguno de los lenguajes de programación que surgen a raíz de la necesidad de introducir las instrucciones deseadas en dichas máquinas. 
+        \subsubsection{Cuarta generación}
+            Robots inteligentes. Esta etapa se caracteriza por tener sensores mucho más perfeccionados que mandan información al controlador y la analizan mediante estrategias complejas de control. Incorpora inteligencia artificial totalmente. Esto permite una toma inteligente de decisiones y el control del proceso en tiempo real.
+
+        \newpage
+        
+    \subsection{Clasificación por arquitectura o estructura}
+        
+        \subsubsection{Poli-articulados}
+        La característica principal de este tipo de robots es la de ser sedentarios, aunque algunos tienen desplazamientos limitados. Tienen un espacio de trabajo limitado según uno o más sistemas de coordenadas y tienen un número limitado de grados de libertad. En la figura \eqref{f:Cap2_general_6} se muestra un ejemplo de estos robot, el cual esta encargado de labores de soldadura.
+        
+        \begin{figure}[htb]
+            \centering
+            \includegraphics[width=0.35\linewidth]{Main/Chapter2/Images2/Robot-poliarticulado.png}
+            \caption{Robot Poli-articulado \cite{ER4pc}}
+            \label{f:Cap2_general_6}
+        \end{figure}
+        
+        \subsubsection{Zoomórficos}
+        La característica principal de este tipo de robot es que imitan los movimientos, desplazamientos y funciones de diversos tipos de seres vivos. Existen dos categorías de robots zoomórficos: no caminadores y caminadores. En la actualidad se encuentran en mayor cantidad los robots caminadores. Un ejemplo de estos ultimos es el robot que se aprecia en la figura \eqref{f:Cap2_general_7}, llamado 'Spot classic de Boston Dynamics'. Las aplicaciones de estos robots son esencialmente en áreas peligrosas tales como la exploración espacial, estudio de volcanes, fines militares e industrias nucleares. 
+        
+        \begin{figure}[htb]
+            \centering
+            \includegraphics[width=0.48\linewidth]{Main/Chapter2/Images2/Robot-Zoomorico.jpg}
+            \caption{Robot zoomórfico: Spot Classic (2015) de Boston Dynamics \cite{cap2_spotrobot}
+ }
+            \label{f:Cap2_general_7}
+        \end{figure}
+        
+        \newpage
+        
+        \subsubsection{Móviles}
+        Estos robots tienen una capacidad de desplazamiento amplia, basados en carros o plataformas y equipado de un sistema locomotor comúnmente de ruedas. Se desplazan por una trayectoria o camino por medio de un mando a distancia o guiándose a través de la información capturada por los sensores. Un ejemplo es el iRobot 510 PackBot mostrado en la figura \eqref{f:Cap2_general_8}, que se utiliza para realizar una variedad de misiones, incluida la eliminación de artefactos explosivos, manipulación de materiales peligrosos, etc.
+        
+        \begin{figure}[htb]
+            \centering
+            \includegraphics[width=0.27\linewidth]{Main/Chapter2/Images2/Robots-moviles.jpg}
+            \caption{Robot móvil: 
+            iRobot 510 PackBot.\cite{cap2_iRobot510}}
+            \label{f:Cap2_general_8}
+        \end{figure}
+        
+        \subsubsection{Androides}
+        La particularidad de este tipo de robots es que son antropomorfos, en otras palabras, que tiene forma o apariencia humana y además imitan algunos aspectos de su conducta de manera autónoma. La mayor dificultad que tienen hoy en día los especialistas de este tipo de robots es simular el comportamiento cinemático del ser humano, llamado locomoción bípeda. La locomoción bípeda es la habilidad de los seres vivos de caminar sobre sus dos extremidades inferiores. Boston Dynamics tiene varios robots androides, entre los cuales se encuentra el robot Atlas visualizado en la figura.\eqref{f:Cap2_general_9}.
+        
+        \begin{figure}[htb]
+            \centering
+            \includegraphics[width=0.65\linewidth]{Main/Chapter2/Images2/Robot-androide.png}
+            \caption{Robot androide: Atlas de Boston Dynamics \cite{cap2_androide}}
+            \label{f:Cap2_general_9}
+        \end{figure}
+        
+        \newpage
+
+    
+    \subsection{Clasificación por su movimiento}
+    
+        \subsubsection{Robots articulados}
+        
+        Los robots articulados son unos de los tipos más comentados de robots industriales. Se asemejan a un brazo humano en su configuración mecánica. El brazo está conectado a la base con una articulación giratoria. Las articulaciones pueden ser paralelas u ortogonales entre sí. Los robots articulados que tienen seis grados de libertad son los robots industriales más utilizados, ya que el diseño ofrece la máxima flexibilidad.
+        
+        \begin{figure}[htb]
+            \centering
+            \includegraphics[width=1.0\linewidth]{Main/Chapter2/Images2/Robot-articulado.png}
+            \caption{Robot Articulado \cite{cap2_class_mov}}
+            \label{f:Cap2_segunMovimiento_articulado}
+        \end{figure}
+        
+        \subsubsection{Robots cartesianos}
+        
+        Los robots cartesianos también se denominan robots rectilíneos y tienen una configuración rectangular. Estos tipos de robots industriales tienen tres articulaciones prismáticas para proporcionar movimiento lineal al deslizarse sobre sus tres ejes perpendiculares (X, Y, Z). 
+        
+        \begin{figure}[htb]
+            \centering
+            \includegraphics[width=1.0\linewidth]{Main/Chapter2/Images2/Robot-cartesiano.png}
+            \caption{Robot Cartesiano \cite{cap2_class_mov}}
+            \label{f:Cap2_segunMovimiento_cartesiano}
+        \end{figure}
+        
+        \newpage
+
+        
+        \subsubsection{Robots SCARA}
+        
+        Los robots SCARA son los robots que pueden hacer 3 traslaciones más una rotación alrededor de un eje vertical. Los ejes rotativos se colocan verticalmente, y el efector final unido al brazo se mueve vertical. Por la configuración de los brazos de SCARA, son flexibles en los ejes XY y rígidos en el eje Z. Los robots SCARA se especializan en movimientos laterales y se utilizan principalmente para aplicaciones de ensamblaje. 
+        
+        \begin{figure}[htb]
+            \centering
+            \includegraphics[width=0.9\linewidth]{Main/Chapter2/Images2/Robot-SCARA.png}
+            \caption{Robot SCARA  \cite{cap2_class_mov}}
+            \label{f:Cap2_segunMovimiento_scara}
+        \end{figure}
+        
+        \subsubsection{Robots delta}
+        
+        Los robots delta también se les llama robots paralelos, ya que consiste en enlaces de unión paralelos conectados con una base fija común. Debido al control directo de cada junta sobre el efector final, el posicionamiento de este último se puede controlar fácilmente con sus brazos, lo que resulta un robot de operación de alta velocidad. El espacio de trabajo de los robots delta tienen forma de cúpula. Estos robots se utilizan generalmente para aplicaciones de pick and place.
+        
+        \begin{figure}[htb]
+            \centering
+            \includegraphics[width=0.9\linewidth]{Main/Chapter2/Images2/Robot-delta.png}
+            \caption{Robot delta \cite{cap2_rdelta_1}\cite{cap2_rdelta_2}\cite{cap2_rdelta_3}}
+            \label{f:Cap2_segunMovimiento_delta}
+        \end{figure}
+        
+         \newpage
+
+        
+        \subsubsection{Robots cilíndricos}
+        
+        Los robots cilíndricos tienen al menos una junta giratoria en la base y al menos una junta prismática que conecta los enlaces. Estos robots tienen un espacio de trabajo cilíndrico con un eje pivotante y un brazo extensible que se mueve verticalmente y deslizándose. Por lo tanto, los robots con configuración cilíndrica ofrecen un movimiento lineal vertical y horizontal junto con un movimiento giratorio sobre el eje vertical.
+        
+        \begin{figure}[htb]
+            \centering
+            \includegraphics[width=1.0\linewidth]{Main/Chapter2/Images2/Robot-cilindrico.png}
+            \caption{Robot cilíndrico \cite{cap2_class_polar_1}\cite{cap2_class_polar_cilin_2}\cite{cap2_class_polar_3}}
+            \label{f:Cap2_segunMovimiento_cilindrico}
+        \end{figure}
+        
+        \subsubsection{Robots polares}
+        
+        También llamados robots esféricos. En esta configuración el brazo está conectado a la base por una junta giratoria , una combinación de dos juntas rotativas y una junta lineal. Los ejes forman un sistema de coordenadas polares y crean una envoltura de trabajo de forma esférica.
+        
+        \begin{figure}[htb]
+            \centering
+            \includegraphics[width=1.0\linewidth]{Main/Chapter2/Images2/robot-polar.png}
+            \caption{Robot polar \cite{cap2_class_polar_1}\cite{cap2_class_polar_cilin_2}  }
+            \label{f:Cap2_segunMovimiento_polar}
+        \end{figure}
+    
+                \newpage
+
+
+\section{Estadísticas y aplicaciones}
+
+    Muchos tipos de actividades en los sectores industriales tienen el potencial técnico para ser automatizados. Según el reporte ``El potencial técnico para la automatización en los EE. UU'' de McKinsey Company en enero del 2017, el 50\% de los trabajos realizados por humanos hoy son vulnerables al reemplazo por robots. Eso podría equivaler a una pérdida de \$15 billones dólares en salarios en todo el mundo y \$2.7 billones de dólares en los EE. UU. Esto puede ocurrir por completo entre los años 2035 -2055 aproximadamente. 
+    
+    En la práctica, la implementación de la automatización en nuestro mundo dependerá de más que solo la viabilidad técnica. Existen cinco factores:
+
+        \begin{enumerate}
+           \item {Viabilidad técnica.}
+            \item {Costos para automatizar.}
+            \item {La relativa escasez, las habilidades y el costo de los trabajadores de que otro modo podrían realizar la actividad.}
+           \item {Beneficios de la automatización más allá de la sustitución del costo laboral.}
+            \item {Consideraciones regulatorias y de aceptación social.}
+    \end{enumerate}
+    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.2\linewidth]{Main/Chapter2/Images2/LOGOMCKINSEY.jpg}
+        \caption{Logo de McKinsey Company \cite{mckinsey}}
+        \label{f:Cap2_general_potencial_automatizacion_11}
+    \end{figure}
+    
+    Según la figura \eqref{f:Cap2_general_potencial_automatizacion}, las actividades más automatizables son las que gran parte del tiempo implican realizar actividades físicas u operar maquinaria en un entorno predecible. Los trabajadores llevan a cabo acciones específicas en entornos conocidos donde los cambios son relativamente fáciles de anticipar. Dado que las actividades físicas predecibles ocupan un lugar destacado en sectores como la fabricación, el servicio de alimentos y el alojamiento y la venta minorista, estas son las más susceptibles a la automatización basadas solo en consideraciones técnicas.
+    
+    
+    \begin{enumerate}
+        \item \textbf{El sector de servicios}: El alojamiento y servicio de alimentos, donde casi la mitad de todo el tiempo de trabajo implica actividades físicas predecibles y la operación de maquinaria, incluida la preparación, la cocina o el servicio de alimentos; limpieza de áreas de preparación de alimentos; preparar bebidas frías y calientes; y la recolecta platos sucios. 
+        \item \textbf{En la manufactura o producción}: Las actividades van desde el envasado de productos hasta la carga de materiales en equipos de producción, desde soldadura hasta mantenimiento de equipos.
+        \item \textbf{El comercio minorista}: Los minoristas pueden aprovechar, por ejemplo, la gestión de existencias y la logística eficiente, impulsada por la tecnología. Los objetos de embalaje para el envío y almacenamiento de mercancías se encuentran entre las actividades físicas más frecuentes en el comercio minorista y tienen un alto potencial técnico para la automatización.
+    \end{enumerate}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.97\linewidth]{Main/Chapter2/Images2/potencial-automatisacion.png}
+        \caption{El potencial técnico para la automatización en los EE. UU. (McKinsey’s Company 2017) \cite{mckinsey_jobs}}
+        \label{f:Cap2_general_potencial_automatizacion}
+    \end{figure}
+  
+      \newpage
+  
+    Carl Benedikt Frey y Michael A. Osborne en el año 2013 publicaron su paper ``El futuro del empleo: ¿Cuán susceptibles son los trabajos para la computarización?” \cite{FREY2017254}. El efecto que causo en la población que leyó esta publicación, fue de dudas e incertidumbres, sin embargo, el reporte de la empresa McKinsey Company del 2017 mostrado anteriormente refuerza el trabajo realizado por el economista y por el profesor de machine learning. En la figura \eqref{f:Cap2_general_distribucion_empleo} se visualiza la probabilidad de computarización del trabajo por categorías. Se aprecia que el 47\% de los trabajos corren un alto riesgo de ser computarizados (probabilidad mayor a 70\%).
+    
+    \begin{figure}[htb]
+        \centering
+        \includegraphics[width=1\linewidth]{Main/Chapter2/Images2/distribucion-del-empleo.png}
+        \caption{La distribución del empleo ocupacional de BLS (Oficina de estadísticas laborales) 2010 sobre la probabilidad de computarización, junto con la participación en las categorías de probabilidad baja, media y alta. El área total bajo todas las curvas es igual al empleo total de los EE.UU \cite{FREY2017254}.}
+        \label{f:Cap2_general_distribucion_empleo}
+    \end{figure}
+    
+        \newpage
+
+
+    Acerca del tamaño y crecimiento del mercado de robots industriales, se puede decir que pocos han mostrado un crecimiento tan fuerte y sostenido en la última década. La figura \eqref{f:Cap2_general_envios_anuales} reafirma este crecimiento. En los últimos años, las instalaciones anuales aumentaron en un 19\% CAGR, lo que resultó en 422,271 nuevas instalaciones globales en 2018, por un valor de USD 16,5 mil millones. Esto fue solo para el hardware robótico, mientras que el software / servicios y el hardware periférico ascendieron aproximadamente al mismo valor cada uno. A finales de 2018, el stock operativo global total de robots fue de 2.439.543. Asia es el motor de crecimiento detrás de estos números (dos de cada tres nuevas instalaciones robóticas ocurren en Asia), con China a la cabeza (aumentando el stock operativo de robots en casi un 30\% interanuales los años pasados). Europa y América se están quedando un poco atrás. 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.67\linewidth]{Main/Chapter2/Images2/envios-anuales-robots.png}
+        \caption{Envíos anuales (en miles) de robots industriales en todo el mundo \cite{growth_Insights}.}
+        \label{f:Cap2_general_envios_anuales}
+    \end{figure}
+    Además del rápido crecimiento, lo más emocionante de la robótica es el impacto fundamental que tendrá en nuestras vidas futuras, librándonos potencialmente de la mayor parte del trabajo manual. A pesar de una percepción comúnmente diferente, incluso en industrias “altamente automatizadas” como la automotriz, el grado promedio de automatización (número de tareas automatizadas / número de tareas totales) en el ensamblaje final es solo alrededor del 8-10\%. Y la mayoría de las otras industrias están muy por debajo de eso. Por otro lado, generalmente se estima que hasta el 85\% de todas las tareas son 'automatizables'. Escalar esta curva de automatización ofrece una gran oportunidad para aumentar la productividad y el bienestar global, si nosotros, como sociedad, podemos compartir sus beneficios por igual.
+    
+            \newpage
+    
+    Los robots siguen siendo esencialmente demasiado caros y demasiado 'estúpidos', lo que permite muy pocas áreas de aplicación rentables. Pero nos enfrentamos a una tormenta perfecta de inventos innovadores que pronto desbloquearán un punto de inflexión, donde la robótica será significativamente más barata y más versátil que la mayoría del trabajo manual.
+    
+     A pesar de no incluir datos de los últimos años, la figura \eqref{f:Cap2_general_solicitud_patentes} muestra las solicitudes anuales de patentes de la UE y los EE. UU. para tecnologías de fabricación avanzadas (incluida la robótica) solo han comenzado a despegar en la última década. A medida que estos esfuerzos exponenciales de I + D alcancen la madurez comercial, se desbloqueará una ola sin precedentes de nuevos (y rentables) casos de uso de robótica. 
+     
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\linewidth]{Main/Chapter2/Images2/solicitud-patentes.png}
+        \caption{Solicitudes de patentes anuales para tecnologías de fabricación avanzadas específicas \cite{dd98ff58}}
+        \label{f:Cap2_general_solicitud_patentes}
+    \end{figure}
+
+ 
+    Las empresas que están innovando en el área de robótica buscan solucionar problemáticas para que sea más accesible a la mayor cantidad de personas, para este propósito desarrollan nuevas tecnologías para minorar los costos o hacer más flexible la robótica. Se pueden dividir en categorías las principales áreas de innovación en robótica, tales como se presentan en la figura \eqref{f:Cap2_general_empresas_robotica}:
+
+    \newpage
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\linewidth]{Main/Chapter2/Images2/empresas-robotica.png}
+        \caption{Mapa del mercado de robótica industrial \cite{pauventures}}
+        \label{f:Cap2_general_empresas_robotica}
+    \end{figure}
+    
+    \begin{itemize}
+        \item{ \textbf{Hardware asequible y versátil}: en la última década, los costos promedio de una instalación robótica se han reducido aproximadamente en un 40\%, mientras que su productividad ha aumentado aproximadamente un 5\% por año. Se necesitarán nuevos modelos de negocio para ayudar a fomentar la adopción del mercado (por ejemplo, ``robot como servicio'' o modelos de alquiler). Al mismo tiempo, las capacidades mecánicas y las propiedades físicas deben mejorar (menos peso, mayor alcance, mayor velocidad, mejor modularidad, mejores sistemas de seguridad, etc.).}
+        \item{ \textbf{Facilidad de configuración y enseñanza}: hoy en día, alrededor del 70\% de los costos totales de vida útil de una celda robótica son generados por servicios relacionados con la configuración, la programación y la enseñanza. Por lo general, esto lo realizan una gran cantidad de integradores de sistemas de tamaño pequeño a mediano, y demoran semanas o meses en configurar, programar y certificar una nueva aplicación de robótica. Por lo tanto, aquí no solo enfrentamos un problema de costos y tiempo, sino también un desafío de inflexibilidad. }
+        \item {\textbf{Inteligencia y habilidades}: después de codificar dolorosamente una aplicación robótica, sigue siendo en gran medida rígida e inflexible. Si, por ejemplo, la forma o la posición de las piezas que va a recoger un robot cambian con el tiempo, en la mayoría de los casos esto significaría ``fin del juego'' para un robot industrial. }
+    \end{itemize}
+
+\newpage
+
+    \begin{itemize}
+        \item{ \textbf{Periferia e integraciones}: Una celda robótica siempre comprende elementos de hardware adicionales como pinzas y herramientas, sistemas de transporte, sistemas de seguridad, cámaras 2D y 3D, etc. La mayoría de estos sistemas periféricos provienen de diferentes proveedores, no tienen interfaces estándar y no se comunican fácilmente entre ellos. La creación de estándares y la modularización es clave para permitir una experiencia plug \& play ``consumida'' en diferentes proveedores de sistemas.}
+        \item{ \textbf{Sistema operativo y certificación}: Hoy en día, no existe un ``MS Windows'' para la robótica industrial, que permitiría que todas las partes individuales que arman un robot se comuniquen entre sí. A pesar de algunos esfuerzos de código abierto, como ROS2 (Robotics Operating System 2), todavía no se ha encontrado ningún estándar de software real de la industria.}
+    \end{itemize}

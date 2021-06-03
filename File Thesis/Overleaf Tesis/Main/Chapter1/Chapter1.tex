@@ -1,0 +1,54 @@
+\chapter{Introducción}\label{CAP1}
+
+\section{Motivación}
+
+Desde el año 2010 las ventas de robots industriales se han acelerado considerablemente en nuestro país debido a la tendencia continua hacia la automatización y las sucesivas mejoras técnicas en este tipo de sistemas. El estudio de la IDC Worldwide Semiannual Robotics Spending Guide \cite{IDC} indica que el mercado de la robótica en Latinoamérica presenta un crecimiento en 2019 del 73\% en robots industriales, del 27\% en robots de servicios y de un 0,09\% en robots de consumo. Los robots para producción de alimentos ganan terreno debido a la alta demanda de mano de obra para el trabajo dentro de esta actividad. Sin embargo, este nuevo interés por parte de la industria no se refleja en los estudios y objetivos de las formaciones académicas en las universidades, demostrando nuevamente una de las principales debilidades de nuestro país, la desconexión entre la industria y la academia. Esta desconexión se hace más latente aún con miras a nuestro departamento de mecánica en la USACH, una búsqueda sencilla de la palabra clave “robot” en los repositorios digitales de nuestra universidad, no arroja más de una treintena de resultados posibles, la mayoría de ellos ligados a otros departamentos de la universidad, principalmente eléctrica.
+
+A pesar de esto y con la formación de ingenieros a nuestras espaldas, entendemos que una idea o solución a una problemática, es necesaria adaptarla a la realidad del entorno, en nuestro caso una robótica adaptada a las necesidades y capacidades del país. Es por esto que se elige entre las múltiples ramas de la robótica, los robots de tipo industrial adoptando la definición de la ISO como “Manipulador multifuncional reprogramable con varios grados de libertad, capaz de manipular materias, piezas, herramientas o dispositivos especiales según trayectorias variables programadas para realizar tareas diversas.” Nos enfocaremos en un robot manipulador de tipo delta, con la esperanza de que en un futuro próximo pueda implementarse y ser de ayuda en la industria agropecuaria de nuestro país, específicamente en sus procesos de packing y pick and place.
+
+La intención de esta tesis es revertir este escenario en nuestro departamento, y renovar las iniciativas en el ámbito de la robótica en nuestros compañeros presentando una guía completa, de todos los ámbitos necesarios para comenzar a desarrollar un proyecto de robot delta, mostrando y resolviendo las problemáticas asociadas a la cinemática y dinámica del robot, la matemática implícita en estas soluciones y el código mediante el cual se llegó a dichas soluciones. Además, se realizarán simulaciones que comprueben los resultados teóricos. Todo esto bajo un ambiente de software libre y/o educativo, presentando además muchas ramas para posibles proyectos en el área.
+
+\section{Hipótesis de estudio}
+Es posible realizar el modelamiento de la cinemática y dinámica de un robot delta a través de softwares libres y validarlo por medio de softwares educativos.
+
+\section{Objetivos}
+
+    \subsection{Objetivo general}
+    Diseñar un algoritmo que controle el movimiento de un robot delta y validarlo a través de software de simulación.
+
+\subsection{Objetivos específicos}
+\begin{enumerate}
+    \item {Crear algoritmos que calculen trayectorias lineales en el espacio cartesiano con perfil de velocidad trapezoidal.}
+    \item {Crear algoritmos que resuelva la cinemática y dinámica.}
+    \item {Crear algoritmos que calculen el espacio de trabajo del robot.}
+    \item {Determinar el espacio de trabajo a partir de restricciones impuestas.}
+    \item {Simular el movimiento de las piezas mecánicas del robot a través de una herramienta de visualización.}
+    \item {Calcular la dinámica por medio de un software de análisis mecánico.}
+    \item {Comparar los resultados de la dinámica calculados por los algoritmos y por el software de análisis mecánico. }
+\end{enumerate}
+
+\newpage
+
+
+\section{Alcance de la propuesta y limitaciones}
+
+El alcance de este proyecto por tanto diseñar un algoritmo para el control de su movimiento y verificar los resultados obtenidos a través de software de visualización y simulación dinámica. Es importante señalar que dentro de los alcances de esta tesis no se incluye la fabricación del robot, optimización de dimensionamiento de piezas y  optimización de trayectoria.
+
+
+\section{Estructura de la tesis}
+
+Este documento se organiza en 8 capítulos y 2 anexos que, en rasgos generales, se describen a continuación:
+
+\begin{itemize}
+
+    \item {En el \textbf{capítulo \eqref{CAP1}} se justifica lo importante que es la realización de este tema de tesis para la Universidad de Santiago, Chile y el mundo. Empieza con la motivación principal de la tesis y posteriormente se presentan antecedentes generales sobre la robótica. Luego se presenta el problema a investigar con su respectiva descripción, hipótesis, objetivos generales y  objetivos específicos. Finalmente se establecen los alcances y limitaciones relacionadas con la modelación de un robot.}
+    \item {En el \textbf{capítulo \eqref{CAP2}} inicialmente se expone una breve introducción a la robótica explicando su origen y su significado. Posteriormente se presentan los hitos más importantes sobre la robótica en orden cronológico que impactaron en nuestra sociedad. Por otra parte, existen distintas clasificaciones de robot, por lo que se plantean solo las que son más recurrentes en el campo profesional a nivel mundial. Finalmente se destacan datos estadísticos y aplicaciones sobre la robótica en los últimos años.}
+    \item {El \textbf{capítulo \eqref{CAP3}} inicia con el funcionamiento general, una estructura básica y la descripción de las partes mecánicas del robot delta. Luego se explica detalladamente cada herramienta que se utiliza en la solución adoptada para la problemática de la modelación cinemática y dinámica del robot delta. Estas herramientas son tres: el software donde se crean los algoritmos para la control de la cinemática y dinámica; la interfaz de visualización de las piezas para la validación cinemática y software de simulación para la validación dinámica.}
+    \item {El \textbf{capítulo \eqref{CAP4}} explica matemáticamente los siguientes tópicos: modelación cinemática, modelación dinámica, espacio de trabajo y trayectoria de un robot delta. Se presenta el sistema de referencia global en que están basados los resultados y los dos métodos utilizados para la solución de la modelación cinemática y dinámica.}
+    \item {En el \textbf{capítulo \eqref{CAP5}} se establecen los valores de las dimensiones y masas de las partes mecánicas del robot delta a simular.}
+    \item {En el \textbf{capítulo \eqref{CAP6}} se presenta el diagrama de flujo de trabajo con el que se desarrolla la tesis. La idea de este diagrama de flujo es que se vea claramente los pasos que se siguieron en este documento. Posteriormente se explican los algoritmos de cinemática y dinámica, los pasos para calcular el espacio de trabajo con sus respectivas restricciones y los algoritmos de las trayectorias implementados en el software ROS. Se expone el formato URDF de las partes mecánicas del robot delta y la configuración del paquete de visualización RViz. Finalmente se presenta la simulación dinámica de robot delta en el software ADAMS Student. Se da a conocer la configuración del software, la creación de piezas mecánicas, el tipo de junta entre las piezas, las simplificaciones físicas del problema a solucionar, la trayectoria a realizar y la configuración de los sensores de torque en los actuadores.}
+    \item {En el \textbf{capítulo \eqref{CAP7}} se dan a conocer los resultados obtenidos por las simulaciones y algoritmos propuestos en el capitulo \eqref{CAP6} . Específicamente los resultados son: visualización de las partes mecánicas, espacio de trabajo y comparación de la modelación dinámica del robot delta.}
+    \item {En el \textbf{capítulo \eqref{CAP8}} se presenta las conclusiones de los resultados del capitulo \eqref{CAP7} y las posibles proyecciones a futuro de esta tesis.}
+    \item {En el \textbf{apéndice \eqref{anexoB}} se desarrollan detalladamente la modelación física y matemática vista en el capítulo \eqref{CAP4}.} 
+    \item {En el \textbf{apéndice \eqref{anexoC}} se presentan los códigos de los algoritmos escritos en el capitulo \eqref{CAP6} para que sean utilizados a futuro fácilmente.} 
+    \end{itemize}

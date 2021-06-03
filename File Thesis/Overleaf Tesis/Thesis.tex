@@ -1,0 +1,348 @@
+\documentclass[11pt,oneside]{book}
+
+\usepackage{textcomp}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb,bm}
+\usepackage{gensymb}
+\usepackage{graphicx,color}
+%\usepackage{subfigure}
+\usepackage{subfig}
+\usepackage{caption}
+\usepackage[spanish]{babel}
+\usepackage{float}
+\usepackage[left=4cm,right=2.5cm,top=2.5cm,bottom=2.5cm,headheight=35pt]{geometry}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage{url}
+\usepackage[title]{appendix}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage{longtable}
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    citecolor=black,
+    urlcolor=black,
+    pdftitle={},
+    pdfsubject={},
+    pdfauthor={},
+    pdfkeywords={}
+}
+
+% INICIO***********paquetes de dibujo*******
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage{pst-all}	%call the pstricks package
+\usepackage{pst-3dplot}
+\usepackage{pst-solides3d}
+%\newpsobject{malla}{psgrid}{subgriddiv=1,griddots=10,gridlabels=6pt}
+% FIN***********paquetes de dibujo*******
+
+\usetikzlibrary{shapes,snakes}
+\usetikzlibrary{arrows,shapes,positioning,shadows,trees}
+\usetikzlibrary{trees,positioning,shapes,shadows,arrows}
+\usetikzlibrary{calc}
+
+\usepackage[edges]{forest}
+\usepackage{svg}
+
+\usepackage{comment}
+\usepackage{multirow,array}
+\usepackage[singlespacing]{setspace}
+\usepackage{fancyhdr}
+\usepackage{fancybox}
+\usepackage{import}
+\usepackage[scale=1.2]{ccicons}
+\usepackage{booktabs}
+\usepackage{xspace}
+\usepackage[utf8]{inputenc}
+\usepackage[style=spanish]{csquotes}
+\usepackage{subfig}
+\usepackage{tabularx}
+
+\usepackage{xcolor}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\usepackage{enumerate}
+\usepackage{stackengine}
+\usepackage{smartdiagram}  
+\usepackage{svg}
+
+\usepackage{caption}
+\usepackage{listings}
+\usepackage[newfloat]{minted}
+\usepackage{caption}
+\newenvironment{code}{\captionsetup{type=listing}}{}
+\SetupFloatingEnvironment{listing}{name=Source Code}
+%\renewcommand\listoflistingscaption{Lista de fragmentos de códigos}
+%\renewcommand\listingscaption{Código}
+
+%% minted
+\setminted{frame=lines,
+                                breaklines=true,
+                                breaksymbolleft=,
+                                framesep=2mm,
+                                baselinestretch=1.2,
+                                bgcolor=LightGray,
+                                fontsize=\footnotesize,
+                                linenos}
+
+%%%   XML %%%   
+\usepackage{lmodern}
+\usepackage{listings}
+
+\usepackage{color}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+\lstset{
+basicstyle=\ttfamily,
+columns=fullflexible,
+showstringspaces=false,
+commentstyle=\color{gray}\upshape,
+escapechar=* % <=  to escape to LaTeX
+}
+\lstdefinelanguage{XML}
+{
+backgroundcolor = \color{orange!5},
+breaklines=true,
+  morestring=[b]",
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+ identifierstyle=\color{darkblue},
+ keywordstyle=\color{cyan},
+ morekeywords={xmlns,version,type}% list your attributes here
+ }
+ 
+ 
+ \lstdefinelanguage{msg}
+{
+backgroundcolor = \color{lightblack},
+breaklines=true,
+  stringstyle=\color{white},
+ identifierstyle=\color{white},
+ keywordstyle=\color{white},
+  xleftmargin=.2\textwidth, xrightmargin=.3\textwidth,
+ }
+
+\definecolor{LightGray}{gray}{0.9}
+\definecolor{DarkGray}{gray}{0.1}
+
+\usemintedstyle{borland}
+%%%% Bibliografia Referencias %%%   
+%\usepackage[backend=biber]{biblatex}
+%\addbibresource{Back/References.bib}
+%\usepackage{mathtools}
+%\parskip=2pt
+
+\usepackage[spanish]{babel} 
+\usepackage[backend=biber, style=iso-numeric]{biblatex}
+\addbibresource{Back/References.bib}
+\usepackage{mathtools}
+\parskip=2pt
+
+\usepackage{url}
+
+\usepackage{empheq}
+
+%%% PYHTON
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{minted}
+\usepackage{listings}
+
+\renewcommand{\rmdefault}{phv}
+\renewcommand{\sfdefault}{phv}
+\sffamily
+
+
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\renewcommand{\headrulewidth}{0.pt}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\footrulewidth}{0.pt}
+
+\makeatletter
+
+% \let\plainappendixpage\appendixpagename
+% \makeatletter
+% \renewcommand{\appendixpage}{
+%   \begingroup
+%   \let\ps@plain\ps@empty
+%   \plainappendixpage
+%   \endgroup}
+% \makeatother
+
+\graphicspath{
+{Main/Chapter1/Images1/}
+{Main/Chapter2/Images2/}
+{Main/Chapter3/Images3/}
+{Main/Chapter4/Images4/}
+{Main/Chapter5/Images5/}
+{Main/Chapter6/Images6/}
+{Main/Chapter7/Images7/}
+{Main/Chapter8/Images8/}
+{Front/Images}
+{Back/Images}
+}
+
+\definecolor{ruddybrown}{rgb}{0.73, 0.4, 0.16}
+\definecolor{russet}{rgb}{0.5, 0.27, 0.11}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%% EMPIEZA DOC %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+	
+\singlespacing
+\renewcommand{\contentsname}{Tabla de Contenido}
+%\hypersetup{    
+%    colorlinks=true,        
+%    linkcolor=blue,         
+%    filecolor=magenta,       
+%    urlcolor=russet,           
+%    citecolor=blue
+%}                           
+
+\renewcommand{\listtablename}{Índice de Tablas}
+\renewcommand{\listfigurename}{Índice de Figuras}
+\renewcommand{\bibname}{Bibliografía}
+\renewcommand{\tablename}{\small\bf Tabla}
+\renewcommand{\figurename}{\small\bf Figura}
+\newcommand{\paginiciales}[1]{\begin{center}\begin{huge}\textbf{#1}\end{huge}\end{center}}
+\renewcommand{\appendixname}{Apéndice}
+\renewcommand{\appendixtocname}{APÉNDICE}
+\renewcommand{\appendixpagename}{APÉNDICE}
+\newcommand\tr{\rule{0pt}{4.5ex}}
+\newcommand\br{\rule[-3ex]{0pt}{3ex}}
+\include{Front/TitlePage}
+\include{Front/Copyright}
+
+
+\frontmatter 
+\pagenumbering{roman}
+
+
+\phantomsection  
+\include{Front/Resumen}
+\phantomsection 
+\include{Front/Abstract}
+\phantomsection  
+\include{Front/Dedicatoria}
+\phantomsection  
+\include{Front/acknowledgment}
+
+%-------------{List Caps}----------------------------
+\addtocontents{toc}{\protect\thispagestyle{fancy}} 
+{\hypersetup{colorlinks=black,        
+    linkcolor=black}
+\tableofcontents
+}
+\addcontentsline{toc}{chapter}{Tabla de Contenido}%\newpage
+\newpage
+%------------------{List Tables}----------------------
+\addtocontents{lot}{\protect\thispagestyle{fancy}} 
+%\listoftables
+{
+\let\oldnumberline\numberline
+\renewcommand{\numberline}{Tabla~\oldnumberline}
+\listoftables
+}
+\addcontentsline{toc}{chapter}{Índice de Tablas}%\newpage
+\newpage
+%-------------{List of Figure}----------------------------
+\addtocontents{lof}{\protect\thispagestyle{fancy}} 
+{
+\let\oldnumberline\numberline
+\renewcommand{\numberline}{\figurename~\oldnumberline}
+\listoffigures
+}
+\addcontentsline{toc}{chapter}{Índice de Figuras}%\newpage
+
+\onehalfspacing
+\mainmatter 
+\newpage
+%-------------{List of Algorithms}----------------------------
+%\addtocontents{lof}{\protect\thispagestyle{fancy}} 
+%\addcontentsline{toc}{chapter}{Índice de Algoritmos}
+%\listofalgorithms
+%\newpage
+
+%---------------{Incluir Capitulos}-------------------------
+{\hypersetup{colorlinks=true,        
+    linkcolor=blue,         
+    filecolor=magenta,       
+    urlcolor=russet,           
+    citecolor=blue}
+  \include{Main/Chapter1/Chapter1}    % iontroduccion hipotesis objetivos
+  \include{Main/Chapter2/Chapter2}    %  arte
+  \include{Main/Chapter3/Chapter3}    % Teoría herramientas
+}
+
+{\hypersetup{colorlinks=true,        
+    linkcolor=blue,         
+    filecolor=magenta,       
+    urlcolor=russet,           
+    citecolor=blue}
+ \include{Main/Chapter4/Chapter4}      % Teoria modelacion
+}
+
+{\hypersetup{colorlinks=true,        
+    linkcolor=blue,         
+    filecolor=magenta,       
+    urlcolor=russet,           
+    citecolor=blue}
+ \include{Main/Chapter5/Chapter5}    % Parametros robot delta tesis nuestra
+ \include{Main/Chapter6/Chapter6}      % Desarrollo 
+ \include{Main/Chapter7/Chapter7}    % Resultados  ESTE ES EL MAS PESADO!
+ \include{Main/Chapter8/Chapter8}    % Colcusiones
+}
+
+\addbibresource{Ohne-Titel.bib}
+
+
+
+%---------------{Bibliografia}-------------------------
+\singlespacing
+\backmatter
+\phantomsection
+\addcontentsline{toc}{chapter}{BIBLIOGRAFÍA}
+\addtocontents{References}{\protect\thispagestyle{fancy}} 
+\makeatother
+\makeatletter
+{\hypersetup{colorlinks=true,        
+    linkcolor=blue,         
+    filecolor=magenta,       
+    urlcolor=russet,           
+    citecolor=blue}
+\printbibliography
+}
+
+%---------------{Apendice}-------------------------
+
+\mainmatter
+\appendix
+\clearpage
+\noappendicestocpagenum
+\addappheadtotoc 
+\appendixpage
+
+{\hypersetup{colorlinks=true,        
+    linkcolor=blue,         
+    filecolor=magenta,       
+    urlcolor=russet,           
+    citecolor=blue}
+ \include{Back/Appendix}
+}
+
+\end{document}

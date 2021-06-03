@@ -1,0 +1,355 @@
+\chapter{Resultados}\label{CAP7}
+
+\section{Visualizador}
+        En esta sección se presentan los resultados de la visualización del robot delta en RViz. Primero se muestra la explicación gráfica de la conexión de los nodos y temas creados en ROS. Luego se muestran los enlaces y los marcos referencia de cada enlace en tf. 
+
+    \subsection{Temas y Nodo}
+    
+    \begin{figure}[h]
+            \centering
+            \includegraphics[width=1.0\linewidth]{Main/Chapter7/Images7/nodo_1.png}
+            \caption{Temas y nodos en ROS para la visualización del robot delta.}
+            \label{f:cap7_rviz1111}
+        \end{figure} 
+        
+    \begin{itemize}
+        \item {\textbf{Subscriber:} El tema \textit{m\_txyzth123} esta configurado por un mensaje escrito en el archivo llamado \textit{matriz\_path\_ls.msg}, compuesto por los datos de la tabla \eqref{tab:cap6_rviz_1_msg}. Las matrices \textit{x,y,z} son los puntos de la trayectoria lineal  en el espacio cartesiano de la base móvil. Las matrices \textit{th1,th2,th3} son la trayectoria en el espacio articular de los actuadores. La matriz de \textit{tiempo} es la escala de tiempo de la trayectoria a simular.}
+        \item {\textbf{Nodo:} El nodo con el nombre \textit{posicionador\_rviz\_realtime\_tm1} es el encargado de calcular los ángulos de las articulación o juntas del robot delta a partir de las coordenadas en el espacio cartesiano xyz  de la trayectoria de la base móvil. Los puntos \textit{xyz} son utilizados para simular el movimiento la base móvil y los ángulos de cada junta para el movimiento de las 3 cadenas cinemáticas.}
+        \item {\textbf{Publisher:}  El tema \textit{joint\_states} esta configurado por un mensaje escrito en el archivo llamado \textit{JointState.msg}, compuesto por los datos mostrados en la tabla \eqref{tab:cap6_rviz_2_msg}. Este es un mensaje que contiene datos para describir el estado de un conjunto de juntas controladas por torque. Cada articulación (revoluta o prismática) se identifica de forma única por su nombre. \textit{Name} es el nombre de cada articulación, \textit{position} es la posición de la articulación (rad o m), \textit{velocity} es la velocidad de la articulación (rad/s o m/s) y \textit{effort} es el esfuerzo que se aplica en la articulación (Nm o N). En esta tesis solo se utilizan las matrices de los nombres y posición de cada junta.}
+    \end{itemize} 
+    
+        \begingroup
+            \renewcommand{\arraystretch}{1.5}
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{c m{1.5cm}}
+                   \hline                   
+                   \textbf{Tipo de dato}  & \textbf{Nombre}    \\\hline \hline 
+                   bool &  permiso
+                   \\\hline
+                   int64 &  id\_call
+                   \\\hline
+                   float32[] &  x
+                   \\\hline
+                   float32[] &  y
+                   \\\hline
+                   float32[] &  z
+                   \\\hline
+                   float32[] &  th1
+                   \\\hline
+                   float32[] &  th2
+                   \\\hline
+                   float32[] &  th3
+                   \\\hline
+                   float32[] &  tiempo
+                      \\\hline                   
+                \end{tabular}
+                \caption{Mensaje matriz\_path\_ls.msg utilizado por tema m\_txyzth12.}
+                \label{tab:cap6_rviz_1_msg}
+            \end{table}
+        \endgroup
+        
+        \begingroup
+            \renewcommand{\arraystretch}{1.5}
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{c m{1.5cm}}
+                   \hline                   
+                   \textbf{Tipo de dato}  & \textbf{Nombre}    \\\hline \hline 
+                    string[]  & name
+                   \\\hline
+                    float64[]  & position
+                   \\\hline
+                    float64[]  & velocity
+                   \\\hline
+                    float64[] &  effort
+                    \\\hline                   
+                \end{tabular}
+                \caption{Mensaje joint\_state.msg utilizado por tema joint\_state.}
+                \label{tab:cap6_rviz_2_msg}
+            \end{table}
+        \endgroup
+
+\newpage
+
+    \subsection{Enlaces y Juntas}\label{enalcesyjuntas_cap7}
+        La figura \eqref{f:cap7_rviz_2} representa la visualización de los enlaces del robot delta. La base fija es un cilindro de color gris, la base móvil es un cilindro de color azul y tanto los brazos como los antebrazos son cajas alargadas de color blanco. Además, se muestra los nombres de cada enlace con sus marcos de referencia tf respectivos.
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.8\linewidth]{Main/Chapter7/Images7/rviz_2.png}
+            \caption{Visualización de links y joints del robot delta en RViz}
+            \label{f:cap7_rviz_2}
+        \end{figure}  
+        
+    La figura \eqref{f:cap7_rviz_3} se muestra la relación entre cada enlace, es decir, la relación padre-hijo. Se aprecian 4 cadenas cinemáticas las cuales son: 3 compuestas por la base fija-brazo-antebrazo y 1 compuesta por la base móvil.    
+    \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.8\linewidth]{Main/Chapter7/Images7/rviz_3.png}
+            \caption{Conexión entre los links y joints del robot delta en RViz}
+            \label{f:cap7_rviz_3}
+        \end{figure}  
+
+\newpage
+
+    \subsection{Estructura de arbol URDF}
+    La estructura de árbol URDF es una representación gráfica de la relación padre-hijo entre los enlaces y sus marcos de referencia. En la figura \eqref{f:cap7_rviz_12341}, los nombre de los enlaces son los en rectángulos negros y las juntas en círculos azules. Las juntas son las encargadas de configurar la relación padre-hijo. En la figura  \textit{xyz} se refiere a la traslación del marco de referencia de los hijos respecto al marco de referencia del padre y, de modo similar, \textit{rpy} es la rotación del marco de referencia de los hijos respecto a los de los padres. Al igual que en la sección \eqref{enalcesyjuntas_cap7}, se aprecian 4 cadenas cinemáticas.
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1.0\linewidth]{Main/Chapter7/Images7/rviz_1.png}
+            \caption{Representación gráfica de la relación padre-hijo del robot delta en RViz.}
+            \label{f:cap7_rviz_12341}
+        \end{figure}  
+    
+\newpage
+
+
+\section{Espacio de Trabajo}
+        En esta sección se presentan los resultados del espacio de trabajo del robot delta del capitulo \eqref{CAP6} con las restricciones impuestas en la tabla \eqref{t:cap6_ws_1}.
+        
+    \subsection{Temas y Nodo}
+    
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1.0\linewidth]{Main/Chapter7/Images7/nodo_2.png}
+            \caption{Temas y nodos en ROS para el calculo del espacian de trabajo del robot delta}
+            \label{f:cap7_rviz2222}
+        \end{figure}    
+    
+    \begin{itemize}
+        \item {\textbf{Subscriber:}  el tema \textit{input\_workspace} esta configurado por un mensaje escrito en el archivo llamado \textit{parameter\_ws.msg}, compuesto por los datos de la tabla \eqref{tab:cap6_rviz_4_msg}. \textit{Step} es la discretizacion de los ángulos de los motores en grados para graficar el espacio de trabajo. \textit{Graficar\_realtime} es una entrada que confirma si se quieren graficar los resultados del espacio de trabajo. }
+        \item {\textbf{Nodo:} el nodo con el nombre \textit{workspace\_delta} es el nodo encargado de generar el espacio de trabajo del robot delta a partir de restricciones impuestas.}
+    \end{itemize}
+    
+        
+            \begingroup
+            \renewcommand{\arraystretch}{2.0}
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{c m{3.0cm}}
+                   \hline                   
+                   \textbf{Tipo de dato}  & \textbf{Nombre}    \\\hline \hline 
+                    bool & graficar\_realtime
+                   \\\hline
+                    int64 & step
+                    \\\hline                   
+                \end{tabular}
+                \caption{Mensaje parameter\_ws.msg utilizado por el tema input\_workspace}
+                \label{tab:cap6_rviz_4_msg}
+            \end{table}
+        \endgroup    
+        
+        \newpage
+
+        \subsection{Espacio de trabajo}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.55\linewidth]{Main/Chapter7/Images7/ws_6.png}
+            %\includesvg[width=1\textwidth]{Main/Chapter7/Images7/ws_6.svg}
+            \caption{Espacio de trabajo}
+            \label{f:cap7_ws6}
+        \end{figure}
+        
+    \subsection{Puntos Alcanzables}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.82\linewidth]{Main/Chapter7/Images7/ws_1.png}
+            %\includesvg[width=1\textwidth]{Main/Chapter7/Images7/ws_1.svg}
+            \caption{Puntos alcanzables del robot delta sin restricciones de limites (figura \eqref{f:cap7_ws6})}
+            \label{f:cap7_ws1}
+        \end{figure}    
+        
+    \newpage
+
+    
+    \subsection{Proyección plano $XY$}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.6\linewidth]{Main/Chapter7/Images7/ws_2.png}
+            %\includesvg[width=1\textwidth]{Main/Chapter7/Images7/ws_2.svg}
+            \caption{Vista del plano XY de la figura \eqref{f:cap7_ws6} (en rojo) y \eqref{f:cap7_ws1} (en azul) }
+            \label{f:cap7_ws2}
+        \end{figure}  
+    
+    \subsection{Proyección plano $XZ$}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.6\linewidth]{Main/Chapter7/Images7/ws_3.png}
+            %\includesvg[width=1\textwidth]{Main/Chapter7/Images7/ws_3.svg}
+            \caption{Vista del plano XZ de la figura \eqref{f:cap7_ws6} (en rojo) y \eqref{f:cap7_ws1} (en azul) }
+            \label{f:cap7_ws3}
+        \end{figure}  
+        
+    \newpage
+    
+    \subsection{Singularidad $J_{x}$}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.65\linewidth]{Main/Chapter7/Images7/ws_4.png}
+            %\includesvg[width=1\textwidth]{Main/Chapter7/Images7/ws_4.svg}
+            \caption{Puntos alcanzables figura \eqref{f:cap7_ws1} (azul) y puntos con restriccion $J_{x}\approx0$ (verde) }
+            \label{f:cap7_ws4}
+        \end{figure}  
+    
+    \subsection{Singularidad $J_{\theta}$}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.65\linewidth]{Main/Chapter7/Images7/ws_5.png}
+            %\includesvg[width=1\textwidth]{Main/Chapter7/Images7/ws_5.svg}
+            \caption{Puntos alcanzables figura \eqref{f:cap7_ws1} (azul) y puntos con restricción $J_{\theta}\approx0$ (verde) }
+            \label{f:cap7_ws5}
+        \end{figure}  
+        
+    \newpage
+    
+
+
+        
+        
+        
+        
+\newpage
+
+
+\section{Trayectorias}
+    En esta sección se presentan los resultados de los torques aplicados a los actuadores del robot delta del capitulo \eqref{CAP5} para realizar las trayectorias impuestas de la sección \eqref{nodoprincipal_tray}.
+
+    \subsection{Temas y Nodo}
+    
+    \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.8\textwidth]{Main/Chapter7/Images7/nodo_3.jpg}
+            \caption{Resultado de la dinámica inversa en trayectoria 1}
+            \label{f:cap7_tray_5_nodo}
+    \end{figure}
+    
+    \begin{itemize}
+        \item {\textbf{Subscriber:}  el tema \textit{input\_ls\_final} esta configurado por un mensaje escrito en el archivo llamado \textit{linear\_speed\_xyz.msg}, compuesto por los datos de la tabla \eqref{tab:cap6_rviz_5_msg}. El punto inicial de la trayectoria es \textit{(xo,yo,zo)}. El punto final de la trayectoria es \textit{(xf,yf,zf)}. La velocidad y aceleración máxima permitida en la trayectoria lineal es \textit{vmax} y \textit{amax} respectivamente. El tamaño de la división del perfil de velocidad trapezoidal de la trayectoria en el área de aceleración y desaceleración es \textit{paso1}, mientras que en el área de velocidad constante es \textit{paso2}. El numero de la trayectoria a simular es \textit{num\_tray}}
+        \item {\textbf{Nodo:} el nodo con el nombre \textit{torque\_metodo\_1} es el nodo encargado de calcular el torque que debe accionar los motores del robot delta para producir una trayectoria lineal con velocidad tipo trapezoidal de la base móvil.}
+    \end{itemize}
+    
+            \begingroup
+            \renewcommand{\arraystretch}{1.0}
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{c c}
+                   \hline                   
+                   \textbf{Tipo de dato}  & \textbf{Nombre}    \\\hline \hline 
+                    float32 & xo
+                   \\\hline
+                    float32 & yo
+                   \\\hline
+                    float32 & zo
+                   \\\hline
+                    float32 & xf
+                   \\\hline
+                    float32 & yf
+                   \\\hline
+                    float32 & zf
+                   \\\hline
+                    float32 & vmax
+                   \\\hline
+                    float32 & amax
+                   \\\hline
+                    int64 & paso1
+                   \\\hline
+                    int64 & paso2
+                   \\\hline
+                    int64 & num\_tray
+                    \\\hline                   
+                \end{tabular}
+                \caption{Mensaje linear\_speed\_xyz.msg utilizado por el tema input\_ls\_final}
+                \label{tab:cap6_rviz_5_msg}
+            \end{table}
+        \endgroup   
+        \newpage
+
+    \subsection{Trayectoria 1}
+    
+        \begin{figure}[h]
+            \centering
+            \includesvg[width=1\textwidth]{Main/Chapter7/Images7/curve_1.svg}
+            \caption{Resultado de la dinámica inversa en trayectoria 1}
+            \label{f:cap7_tray1}
+        \end{figure}
+
+                
+    \subsection{Trayectoria 2}
+    
+        \begin{figure}[h]
+            \centering
+            \includesvg[width=1\textwidth]{Main/Chapter7/Images7/curve_2.svg}
+            \caption{Resultado de la dinámica inversa en trayectoria 2}
+            \label{f:cap7_tray2}
+        \end{figure}
+        
+        \newpage
+
+        
+    \subsection{Trayectoria 3}
+    
+        \begin{figure}[h]
+            \centering
+            \includesvg[width=1\textwidth]{Main/Chapter7/Images7/curve_3.svg}
+            \caption{Resultado de la dinámica inversa en trayectoria 3}
+            \label{f:cap7_tray3}
+        \end{figure}
+
+                
+    \subsection{Trayectoria 4}
+    
+        \begin{figure}[h]
+            \centering
+            \includesvg[width=1\textwidth]{Main/Chapter7/Images7/curve_4.svg}
+            \caption{Resultado de la dinámica inversa en trayectoria 4}
+            \label{f:cap7_tray4}
+        \end{figure}
+        
+
+        \newpage
+
+
+    \subsection{Trayectoria 5}
+    
+        \begin{figure}[h]
+            \centering
+            \includesvg[width=1\textwidth]{Main/Chapter7/Images7/curve_5.svg}
+            \caption{Resultado de la dinámica inversa en trayectoria 5}
+            \label{f:cap7_tray5}
+        \end{figure}
+
+                
+    \subsection{Trayectoria 6}
+    
+        \begin{figure}[h]
+            \centering
+            \includesvg[width=1\textwidth]{Main/Chapter7/Images7/curve_6.svg}
+            \caption{Resultado de la dinámica inversa en trayectoria 6}
+            \label{f:cap7_tray6}
+        \end{figure}
+        
+        \newpage
+
+
+    \subsection{Trayectoria 7}
+    
+        \begin{figure}[h]
+            \centering
+            \includesvg[width=1\textwidth]{Main/Chapter7/Images7/curve_7.svg}
+            \caption{Resultado de la dinámica inversa en trayectoria 7}
+            \label{f:cap7_tray7}
+        \end{figure}
+
+
+    \subsection{Trayectoria 8}
+    
+        \begin{figure}[h]
+            \centering
+            \includesvg[width=1\textwidth]{Main/Chapter7/Images7/curve_8.svg}
+            \caption{Resultado de torques de la trayectoria 8}
+            \label{f:cap7_tray8}
+        \end{figure}
+        
+        \newpage
+        
+\newpage

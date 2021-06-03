@@ -1,0 +1,82 @@
+\chapter{Análisis de resultados y proyecciones a futuro}\label{CAP8}
+
+\section{Conclusiones y análisis de resultados}
+        La presente tesis tiene como objetivo principal modelar y validar la cinemática y dinámica de un robot delta. Para cumplir con el objetivo anterior, se utilizan diversas herramientas, tales como ROS, RViz y ADAMS. Los siguientes puntos muestran las conclusiones sobre la utilización de las herramientas y resultados:
+
+             \begin{itemize}
+                 \item \textbf{Robot Operating System}
+             \end{itemize}
+
+            El middleware ROS facilita el desarrollo en código abierto del control de robot complejos separando las tareas a realizar por nodos. Las tareas que se logran segmentar en este documento son 3: visualización 3D de las partes mecánicas, calculo de la dinámica en los actuadores a partir de trayectorias lineales de la base móvil  y espacio de trabajo del robot delta. 
+            
+            Recordar que este es el inicio de otras investigaciones, por lo que es fácil acoplar otras tareas a estos nodos. Además, se crea un archivo que contiene las especificaciones del robot delta como valores de entrada, por lo que la modelación cinemática y dinámica para otro robot con distintos valores geométricos, masas o restricciones del espacio de trabajo es posible con estos nodos si se cambian los valores en dicho archivo.
+            
+            En proyectos futuros es recomendable segregar aun mas estas tareas representadas en nodos, como por ejemplo un nodo que se encargue solo de la trayectoria, otro solo de la cinemática, otro solo de la dinámica, etc.
+            \vspace{1cm}
+            
+\newpage
+
+             \begin{itemize}
+                 \item  \textbf{ROS Visualization} 
+             \end{itemize}
+             
+
+            Se consigue crear el modelo tridimensional sobre el cual se ha implementado la geometría de un robot delta. Al realizar distintas simulaciones de trayectorias lineales de la base móvil se comprueba a simple vista que el algoritmo de cinemática inversa y el calculo de los ángulos interiores del robot delta es valido ya que la base móvil calza perfectamente con los extremos de los antebrazos. El fundamento de esta conclusión se basa en que la cadena cinemática para el control de la base móvil es distinta a la de los brazos y antebrazos. El movimiento de la base móvil se da por medio de la trayectoria lineal en el espacio cartesiano (datos de entrada $XYZ$), el movimiento de los brazos es gracias a los ángulos de los brazos calculados por la cinemática inversa ($\theta_{1i\in \{1,2,3\}} =f(XYZ)$) y el movimiento de los antebrazos debido a los ángulos interiores de la junta esférica brazo-antebrazo ($\theta_{2i\in \{1,2,3\}} =f(XYZ,\theta_{1i\in \{1,2,3\}} ) $ y $\theta_{3i\in \{1,2,3\}} =f(XYZ,\theta_{1i\in \{1,2,3\}} ) $ ).
+            
+             \begin{itemize}
+                 \item  \textbf{Espacio de trabajo}
+             \end{itemize}
+             
+             
+            
+            Se cumple el objetivo de determinar el espacio de trabajo del robot delta, identificando singularidades y puntos críticos  para prevenir daños en las partes mecánicas y/o en los actuadores. Al variar los valores de las restricciones del espacio de trabajo se producen cambios significativos, tanto en la forma, densidad y puntos alcanzables del espacio.
+                \begin{enumerate}
+                    \item  {\textbf{Limites de ángulos de los brazos  $\theta_{1i}$:  }El limite mínimo y máximo de los ángulos de los actuadores o de los brazos mecánicos $\theta_{1i}$, se utilizan principalmente para prevenir colisiones entre los brazos y la base fija o actuadores. Además, al imponer limites desde ${-90}^\circ$ hasta ${90}^\circ$, se obtiene fácilmente una sola solución para la modelación de la cinemática directa.}
+                    \item {\textbf{Discretización angular de los brazos  $\Delta\theta_{1i}$:  }La discretización del rango de los ángulos de los brazos $\Delta\theta_{1i}$, influye en la densidad de puntos del espacio de trabajo. Entre mas pequeña es la discretización, mas puntos alcanza la plataforma móvil del robot delta. El valor de la discretización realmente depende del tipo de actuador. En la actualidad, los actuadores como los motores paso a paso tienen discretización  de ${\Delta\theta}_{1i}={0,00228}^{\circ}$. En esta tesis se utiliza  ${\Delta\theta}_{1i}={5}^{\circ}$, ya que para valores menores, la librería encargada de los gráficos en python no procesa la visualización del total de puntos alcanzables.} 
+                    \item{\textbf{Limites de ángulos interiores $\theta_{2i}$ y $\theta_{3i}$:  }Sobre las restricciones de los ángulos interiores, es decir, las limitaciones de las juntas esféricas brazo-antebrazo, se concluye que influyen en la forma del espacio de trabajo. En la vista superior del espacio de trabajo se puede apreciar que las restricciones dan como resultado una forma hexagonal y en la vista isométrica se aprecia una forma de cúpula invertida. La restricción de $\theta_{2i}$ se utiliza principalmente para evitar la colisión entre los brazos y antebrazos de una misma cadena cinemática y para singularidades como lo son las colinealidades entre un brazo y su antebrazo. La restricción de $\theta_{3i}$ es impuesta principalmente por los catálogos de los fabricantes de las juntas esféricas.  Es importante recalcar que estos dos ángulos tienen gran implicación en singularidades que se aprecian cuando el determinante de la matriz jacobiana es cercano a 0.}
+                    \item{\textbf{Determinante de jacobiano $J_{x}$ y $J_{\theta}$: } Cuando el determinante de una de estas dos matrices es cercano a 0, se producen singularidades como las explicadas en la sección \eqref{CAP4_SINGULARIDAD}. Las posiciónes de los puntos con estas restricciones se encuentran en la periferia del los puntos alcanzables con las restricciones angulares dichas en 1,2 y 3.} 
+                    \item{\textbf{Limite impuesto por fabricantes: } Se utiliza una forma de ortoedro para el espacio de trabajo por la simplificación al momento de crear los algoritmos. Los valores de este octoedro son impuestos con la intención de que los puntos alcanzados por la base móvil cumplan con las restricciones angulares y del determinante de jacobianos dichas  en 1, 2, 3 y 4.  }
+                \end{enumerate}  
+            
+            
+            
+             \begin{itemize}
+                 \item  \textbf{Validación cinemática y dinámica} 
+             \end{itemize}
+             
+            Finalmente, se indican las conclusiones del objetivo principal de esta tesis, la modelación cinemática y dinámica del robot delta. La modelación dinámica busca determinar los torques de los actuadores a partir de los datos de posición, velocidad y aceleración de la base móvil.
+            
+            Para modelar la cinemática y dinámica se proponen 2 métodos analíticos, llamados métodos A y B. Estos métodos son algoritmos compilados en ROS y se validan por medio del software de simulación ADAMS. Es notorio recalcar que al validar la modelación dinámica también se valida la modelación cinemática, ya que se necesita esta ultima para determinar los torques de los actuadores del robot delta.
+            
+            Para ver que los modelos estén correctos, se realizan 8 trayectorias lineales con perfil de velocidad trapezoidal para la base móvil. Son 4 trayectorias rápidas y 4 lentas. Estas 8 trayectorias se simulan en ROS y ADAMS.
+            
+            Al comparar los resultados de los torques producidos por las 8 trayectorias calculados con los métodos A y B, se puede concluir que no importa los métodos de cinemática y dinámica que se utilicen, siempre deben dar resultados iguales si la modelación y simplificaciones son las mismas. En otras palabras, los resultados de los métodos A y B son casi perfectamente iguales por decimales insignificantes. Se recomienda utilizar el método que tenga menor costo computacional. 
+            
+            Al comparar los resultados de los torques producidos por las 8 trayectorias calculados por los 2 métodos y ADAMS, se puede decir que las curvas son similares, tanto en su valor como en su forma. Los errores son mínimos, por lo que se puede concluir que la modelación cinemática y dinámica de los 2 métodos es valida. Estos errores pequeños se deben principalmente por 2 configuraciones en ADAMS. La primera se debe a que en ADAMS no se configura robot delta con cadenas cinemáticas cerradas, ya que el tipo de juntas entre la masa de la base fija y las masas de los extremos inferiores de los antebrazos no es la correcta respecto a los métodos A y B. La relación correcta entre estas masas seria configurándolas con juntas de tipo fijas para que la base móvil sea paralela a la base fija, pero al hacer esto,  ADAMS no logra resolver la dinámica. Esto trae como consecuencia que la base móvil se incline al momento de simular las trayectorias lineales. La segunda configuración es a causa similar de la primera, error en la solución de la dinámica en ADAMS al imponer cadenas cinemáticas cerradas. Para poder simular la trayectoria, se simplifica la masa de la base móvil dividiéndola en 3 y desplazándolas a los extremos inferiores de los antebrazos, es decir, a la posición de las juntas antebrazo - base móvil. Como la distancia entre el centroide de la base fija y las juntas antebrazo - base móvil es pequeña, la influencia de esta simplificación en el torque de los actuadores es baja. Un factor importante a considerar es verificar a futuro si esta diferencia entre los métodos y ADAMS se debe al método conque ADAMS resuelve la dinámica. ADAMS utiliza para calcular las derivadas el método de Euler invertido y para resolver los sistemas de ecuaciones dinámicos y cinemáticos Newton Raphson en forma matricial. A pesar de todos estas complicaciones, se puede asumir valida la modelación cinemática y dinámica del robot delta ya que en la practica, errores pequeños en la escritura del código y en la modelación de robots conllevan a errores grandes en los resultados dinámicos, especialmente en trayectorias de alta velocidad. 
+
+
+\newpage
+
+\section{Futuras lineas de investigación}
+A fin de aumentar el conocimiento en el área de la robótica en nuestra universidad y la industrial, sería de interés estudiar los siguientes puntos:
+
+\begin{itemize}
+    \item {\textbf{Optimización dimensional:} Optimización de las dimensiones del robot delta, tales como la base fija, brazos, antebrazos y base móvil basado en el menor consumo de energía.}
+    \item {\textbf{Optimización de  trayectoria:} Algoritmo de optimización de trayectoria considerando torques mínimo y máximo permitido por los actuadores. La función objetivo se basa en una proporción entre gastar la mínima energía y/o el tiempo mínimo de trayectoria.  Ejemplos de estos algoritmos son: Phase Plane Method y  Dynamic Programming Discrete Optimal Control.}
+    \item {\textbf{Trayectoria pick-and-place:} Método de planificación de trayectoria de tiempo óptimo basado en curvas quínticas de Pitágoras-Hodógrafa (PH) (polinomial 3-4-5) para realizar la operación suave y estable a alta velocidad.}
+    \item {\textbf{Controlador PID:} Este artículo presenta el control de seguimiento para un manipulador robótico tipo delta que emplea controladores PID.}
+    \item {\textbf{Lazo Cerrado:} Implementar datos de retroalimentación para controlar la trayectoria. Se pueden utilizar sensor de imágenes para la posición de la base móvil, sensores de posición angular y torque para los actuadores.}
+    \item {\textbf{Calibración con redes neuronales:} Desarrollo de un algoritmo de calibración para el posicionamiento visual de Delta Robot basado en red neuronal }
+    \item {\textbf{Cinemática de posición con machine learning:} Análisis de seguridad mediante cinemática directa del robot paralelo delta mediante aprendizaje automático }
+    \item {\textbf{Modelo 3D:} Crear un modelo URDF mas complejo. Agregar mas marcos de referencia y que la visualización de piezas sea en base a nube de puntos .*stl.}
+    \item {\textbf{Pinzas:} Diseño e Implementación de un prototipo de una pinza para manipular objetos frágiles}
+    \item {\textbf{Visión por computadora:} Algoritmos de detección de objetos en cinta transportadora }
+    \item {\textbf{Actuadores:} Aplicación de motores paso a paso controlando driver de motores con trayectoria de pulsos.}
+    \item {\textbf{Curva de torque:} Obtener torques máximos y mínimos vs la velocidad angular de los motores paso a paso con sensor de torque rotacional  }
+
+
+\end{itemize}
+
+\newpage
+
+

@@ -1,0 +1,101 @@
+\newpage
+    
+\begin{algorithm}[H]
+\SetKwInput{KwInput}{Input}                % Set the Input
+\SetKwInput{KwOutput}{Output}              % set the Output
+\DontPrintSemicolon
+  
+   \KwData{Testing set $x$}
+  \KwInput{Your Input}
+  \KwOutput{Your output}
+
+% Set Function Names
+  \SetKwFunction{FMain}{Main}
+  \SetKwFunction{FSum}{Sum}
+  \SetKwFunction{FSub}{Sub}
+ 
+% Write Function with word ``Function''
+  \SetKwProg{Fn}{Function}{:}{}
+  \Fn{\FSum{$first$, $second$}}{
+        a = first\\
+        b = second\\
+        sum = first + second\;
+        \KwRet sum\;
+  }
+  \;
+
+% Write Function with word ``Def''
+  \SetKwProg{Fn}{Def}{:}{}
+  \Fn{\FSub{$first$, $second$}}{
+        a = first\;
+        b = second\;
+        sub = first - second\;
+        \KwRet sub\;
+  }
+  \;
+
+  \SetKwProg{Fn}{Function}{:}{\KwRet}
+  \Fn{\FMain}{
+        a = 5\;
+        b = 10\;
+        Sum(5, 10)\;
+        Sub(5, 10)\;
+        print Sum, Sub\;
+        \KwRet 0\;
+  }
+  
+   \While{While condition}{
+  instructions\;
+  \eIf{condition}{
+   instructions1\;
+   instructions2\;
+   }{
+   instructions3\;
+  }
+ }
+ 
+ \tcc{Now this is an if...else conditional loop}
+ \tcp*{this is another comment}
+ 
+   \caption{How to write algorithms}
+\end{algorithm}
+\newpage
+
+ \begin{algorithm}[H]
+\DontPrintSemicolon
+  
+  \KwInput{Your Input}
+  \KwOutput{Your output}
+  \KwData{Testing set $x$}
+  $\sum_{i=1}^{\infty} := 0$ \tcp*{this is a comment}
+  \tcc{Now this is an if...else conditional loop}
+  \If{Condition 1}
+    {
+        Do something    \tcp*{this is another comment}
+        \If{sub-Condition}
+        {Do a lot}
+    }
+    \ElseIf{Condition 2}
+    {
+    	Do Otherwise \;
+        \tcc{Now this is a for loop}
+        \For{sequence}    
+        { 
+        	loop instructions
+        }
+    }
+    \Else
+    {
+    	Do the rest
+    }
+    
+    \tcc{Now this is a While loop}
+   \While{Condition}
+   {
+   		Do something\;
+   }
+
+\caption{Example code}
+\end{algorithm}       
+      \newpage
+  

@@ -7,12 +7,12 @@
 4. [ Model Robot Delta & Parameter](#param)
 5. [ Workflow](#workf)
 6. [ Result ROS Vizualization](#r-rviz)
-7. [ Results simulation of linear trajectories](#r-tray)
-8. [ Result Workspace](#r-ws)
-9. [ Robot Operating System](#ros)
-10. [ ADAMS](#adam)  
-11. [ Model URDF Robot](#urdf)
-12. [ List of simulated linear trajectories](#list)   
+7. [ List of simulated linear trajectories](#list)   
+8. [ Results simulation of linear trajectories](#r-tray)
+9. [ Result Workspace](#r-ws)
+10. [ Robot Operating System](#ros)
+11. [ ADAMS](#adam)  
+12. [ Model URDF Robot](#urdf)
 
 <!-- CONTACT -->
 <a name="conta"></a>
@@ -24,8 +24,17 @@ Mechanical Engineering
 Universidad de Santiago de Chile
 
 <!-- Video -->
+## Download
+Thesis     | Presentation Thesis     |  
+|------------|-------------|
+| [Download this](https://github.com/IvanFernandezGracia/delta_robot_tesis/blob/main/Thesis.pdf)|[Download this]()|
+ |<img align="center" src="https://github.com/IvanFernandezGracia/delta_robot_tesis/blob/main/Readme%20File/portada.png" width="100%">|<img  align="center" src="https://github.com/IvanFernandezGracia/delta_robot_tesis/blob/main/Readme%20File/pres_tesis.png" width="100%"> |
+
+<!-- Video -->
 <a name="video"></a>
 ## Simulation Video
+https://user-images.githubusercontent.com/48660555/120602243-d95de280-c418-11eb-801e-9b2eb469a63e.mp4
+
 
 <!-- Resumen -->
 <a name="abstra"></a>
@@ -41,6 +50,16 @@ The results show that the kinematic and dynamic modeling of the two methods give
 <p align="center">
   <img align="center" width="75%"  src="https://github.com/IvanFernandezGracia/delta_robot_tesis/blob/main/Readme%20File/model_robot_delta.png?raw=true">
 </p>
+
+<!-- Dynamic Theory -->
+<a name="dyna"></a>
+## Dynamic Theory
+
+Lagrangian | Virtual Work  |
+|------------|-------------|
+| <img src="https://github.com/IvanFernandezGracia/delta_robot_tesis/blob/main/Readme%20File/dynamic_2.png?raw=true" width="100%"> | <img src="https://github.com/IvanFernandezGracia/delta_robot_tesis/blob/main/Readme%20File/dynamic_3.png?raw=true" width="100%"> |
+
+
 
 <!-- Wokflow -->
 <a name="workf"></a>
@@ -107,6 +126,6 @@ View Adams    | View Adams      |
 <a name="urdf"></a>
 ## Model URDF Robot Delta
 <p align="center">
-  <img align="center" width="75%"  src="https://github.com/IvanFernandezGracia/delta_robot_tesis/blob/main/Readme%20File/rviz_robot_delta_4.png">
+  <img align="center" width="75%"  src="https://github.com/IvanFernandezGracia/delta_robot_tesis/blob/main/Readme%20File/rviz_robot_delta_5.png">
 </p>
 

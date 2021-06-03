@@ -28,7 +28,7 @@ Universidad de Santiago de Chile
 Thesis     | Presentation Thesis     |  
 |------------|-------------|
 | [Download this](https://github.com/IvanFernandezGracia/delta_robot_tesis/blob/main/Thesis.pdf)|[Download this]()|
- |<img align="center" src="https://github.com/IvanFernandezGracia/delta_robot_tesis/blob/main/Readme%20File/portada.png" width="100%">|<img  align="center" src="https://github.com/IvanFernandezGracia/delta_robot_tesis/blob/main/Readme%20File/pres_tesis.png" width="100%"> |
+ |<img align="center" src="https://github.com/IvanFernandezGracia/delta_robot_tesis/blob/main/Readme%20File/portada.png" width="100%">|<img  align="center" src="https://github.com/IvanFernandezGracia/delta_robot_tesis/blob/main/Readme%20File/pres_tesis_2.png" width="100%"> |
 
 <!-- Video -->
 <a name="video"></a>

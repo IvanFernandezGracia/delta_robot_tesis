@@ -1,0 +1,9 @@
+float32 xo
+float32 yo
+float32 zo
+float32 xf
+float32 yf
+float32 zy
+float32 step
+bool graficar_realtime
+int64 idcall

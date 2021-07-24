@@ -22,7 +22,7 @@ import torque_m1_adams
 import torque_m1_Paderborn_v2_adams
 
 ################################################
-######## [Importar mensajes] ###################
+######## [Importar mensajes X] ###################
 ################################################
 from simu_visual.msg import matriz_path_ls
 from simu_visual.msg import linear_speed_xyz

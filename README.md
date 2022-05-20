@@ -17,7 +17,7 @@
 <!-- CONTACT -->
 ## Certificate of title 
 ![image](https://user-images.githubusercontent.com/48660555/169608383-69cc937d-991e-4694-9068-93bb4bd1cd4e.png)
-Validation en https://www.esigner.cl/EsignerValidar/verificar.jsp
+Código: 1629921404713 validar en https://www.esigner.cl/EsignerValidar/verificar.jsp
 
 <!-- CONTACT -->
 <a name="conta"></a>

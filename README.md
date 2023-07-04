@@ -23,7 +23,8 @@ Código: 1629921404713 validar en https://www.esigner.cl/EsignerValidar/verifica
 <a name="conta"></a>
 ## Contact
 Ivan Alejandro Fernandez Gracia  
-:email: ivan.fernandez.g@usach.cl  
+:email: ivan.fernandez.developer@gmail.com
+:email: i.fernandez.gracia.1993@gmail.com
 :telephone_receiver: +56-961214718  
 Mechanical Engineering  
 Universidad de Santiago de Chile
